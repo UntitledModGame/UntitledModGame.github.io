@@ -1,3 +1,9 @@
+---
+slug: Emergence
+title: Emergence in games
+tags: [gamedesign, opinion]
+---
+
 
 # OPINION: Emergence in games
 
@@ -361,9 +367,11 @@ If shooting team-members hurts the chances of meeting a goal,
 players probably won't do it.
 
 Here's a little impromptu equation that describes the whole idea quite nicely:
+
 ```
 Emergence * DeveloperControl  =  CONSTANT
 ```
+
 With every unit of emergence we add, *by nature*, we lose control as a developer.
 
 Similar to how John Conway couldn't control the shape of Gosper's Glider gun,

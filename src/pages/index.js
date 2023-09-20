@@ -1,6 +1,5 @@
 import React from 'react';
 import clsx from 'clsx';
-import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
 import HomepageFeatures from '@site/src/components/HomepageFeatures';
@@ -8,7 +7,6 @@ import HomepageFeatures from '@site/src/components/HomepageFeatures';
 import styles from './index.module.css';
 
 function HomepageHeader() {
-  const {siteConfig} = useDocusaurusContext();
   return (
     <header class="homepage" className={clsx('hero hero--primary', styles.heroBanner)}>
       <div className="container">
@@ -24,16 +22,8 @@ function HomepageHeader() {
 
         <div>
           <a href="https://steampowered.com">
-            <img src="img/play_free_steam.png"></img>
+            <img src="img/join_discord.png"></img>
           </a>
-        </div>
-
-        <div class="container">
-          <button class="btn">
-            <a href="https://steampowered.com">
-              Discord 😎
-            </a>
-          </button>
         </div>
 
         <br/>
@@ -44,7 +34,6 @@ function HomepageHeader() {
 }
 
 export default function Home() {
-  const {siteConfig} = useDocusaurusContext();
   return (
     <Layout
       title={`UMG`}

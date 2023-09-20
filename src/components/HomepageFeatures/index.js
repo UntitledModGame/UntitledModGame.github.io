@@ -4,42 +4,46 @@ import styles from './styles.module.css';
 
 const FeatureList = [
   {
-    title: 'Easy to Use',
-    Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
+    title: 'Powerful',
+    Img: require('@site/static/img/mechanical_arm.png').default,
     description: (
       <>
-        Docusaurus was designed from the ground up to be easily installed and
-        used to get your website up and running quickly.
+        UMG comes with an insanely powerful modding API, equipped with
+        a custom ECS framework and creative tooling.
+        The only real limit is the human mind!
       </>
     ),
   },
   {
-    title: 'Focus on What Matters',
-    Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
+    title: 'Tuned for Cooperation',
+    Img: require('@site/static/img/cooperative.png').default,
     description: (
       <>
-        Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go
-        ahead and move your docs into the <code>docs</code> directory.
+        A central goal of UMG is compatibility between mods.
+        This degree of compatibility is encouraged at an API level.
+        Mods are encouraged to have dependencies and build on top of each other.
       </>
     ),
   },
   {
-    title: 'Powered by React',
-    Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
+    title: 'Fun!',
+    Img: require('@site/static/img/nerd.webp').default,
     description: (
       <>
-        Extend or customize your website layout by reusing React. Docusaurus can
-        be extended while reusing the same header and footer.
+        Creating stuff is meant to be fun!
+        If you are a nerd 🤓 like me, you should give UMG modding 
+        a try. 
+        I promise you, things are done differently here.
       </>
     ),
   },
 ];
 
-function Feature({Svg, title, description}) {
+function Feature({Img, title, description}) {
   return (
     <div className={clsx('col col--4')}>
       <div className="text--center">
-        <Svg className={styles.featureSvg} role="img" />
+        <img className={styles.featureSvg} role="img" src={Img} />
       </div>
       <div className="text--center padding-horiz--md">
         <h3>{title}</h3>

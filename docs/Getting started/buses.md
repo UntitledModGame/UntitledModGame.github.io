@@ -20,6 +20,8 @@ Remember that in UMG, we have clientside AND serverside.<br/>
 Buses are not synced across the network.
 Both client and server have their own buses.
 
+-------------------
+
 # Example usage:
 ```lua
 
@@ -42,6 +44,7 @@ end)
 
 ```
 
+-------------------
 
 # Creating our own events:
 
@@ -71,23 +74,53 @@ Hello two: 1 "ent" {}
 ]]
 ```
 
+------------------------
 
-Some callback events are emitted automatically by the engine:
+# Engine events
+
+There are a lot of events emitted by the engine.
+These events are prexied with `@`, which means they are special.
+
+For example, `@update`:<br/>
+`@update` is an event called every frame. It's like the game loop.
 ```lua
-load() -- called when the mods and entities are done loading
-update ( dt )   -- called every frame (like love.update)
-draw  () -- CLIENTSIDE: when stuff should get drawn (like love.draw)
-keypressed ( key, scancode, isrepeat )  -- CLIENTSIDE: when a key is pressed (like love.keypressed)
-mousepressed (x, y, button, istouch, presses) -- CLIENTSIDE: when mouse is clicked (like love.mousepressed)
+@update (dt)
+```
+```lua
+-- Example usage:
+umg.on("@update", function(dt)
+    local p = getPlayer()
+    updatePlayer(p, dt)
+end)
 
-tick  ( dt ) -- called every game tick
-playerJoin (username) -- called when `username` joins the server
-playerLeave (username) -- called when `username` leaves the server
+```
+```lua
+@update ( dt )   -- called every frame (like love.update)
+
+@tick () -- Represents one tick.
+-- Ticks are special, because they are synced between server/client.
+
+@load ()-- called when the mods and entities are done loading
+
+
+@playerJoin (username) -- called when `username` joins the server
+@playerLeave (username) -- called when `username` leaves the server
+
+
+-- Client-side only:
+@draw () -- when stuff should get drawn (like love.draw)
+@keypressed ( key, scancode, isrepeat ) -- same as love.keypressed
+@mousepressed (x, y, button, istouch, presses) -- same as love.mousepressed
+
+
 ```
 
+-----------------------------
+
+# Non-engine events:
 Here some other example callbacks that are defined by mods:
 ```lua
-drawEntity ( ent ) -- an entity is getting drawn
-entityDeath ( ent ) -- an entity dies
+"rendering:drawEntity" ( ent ) -- an entity is getting drawn
+"mortality:entityDeath" ( ent ) -- an entity dies
 ```
 

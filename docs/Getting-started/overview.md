@@ -66,7 +66,7 @@ This project uses something that resembles an Entity Component System.<br/>
 
 --------------------
 
-## [**Entities**](./entities.md)
+## [**Entities**](./entities)
 
 An entity is just a glorified lua table, pretty much.<br/>
 They contain "components", which are just key-values in the table.
@@ -83,13 +83,13 @@ print(ent.other)
 
 To define an entity type, we create a new file in `entities/` folder.
 
-To create an entity, we use `server.entities`:
+To create an entity, we use `server.entities`.<br/>
 example:
 ```lua
 local ent = server.entities.my_entity()
 ```
 
-[Read a more in-depth explanation here.](./entities.md)
+[Read a more in-depth explanation here.](./entities)
 
 --------------------
 
@@ -99,7 +99,7 @@ local ent = server.entities.my_entity()
 Groups are what contain entities.<br/>
 
 If you are starting out, you likely won't need to use these.<br/>
-[Read more about them here.](./groups.md)
+[Read more about them here.](./groups)
 
 
 -------------------
@@ -121,7 +121,7 @@ Question buses:
 - Provide information with `umg.answer`
 - (Similar to pub-sub design pattern, but in reverse)
 
-**[Read more about them here.](./buses.md)**
+**[Read more about them here.](./buses)**
 
 ----------------
 

@@ -7,7 +7,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'Untitled Mod Game',
-  tagline: 'Dinosaurs are cool',
+  tagline: 'Creativity is king!',
   favicon: 'img/logo.png',
 
   // Set the production url of your site here

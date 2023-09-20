@@ -27,7 +27,7 @@ const FeatureList = [
   },
   {
     title: 'Fun!',
-    Img: require('@site/static/img/nerd.webp').default,
+    Img: require('@site/static/img/nerd.png').default,
     description: (
       <>
         Creating stuff is meant to be fun!

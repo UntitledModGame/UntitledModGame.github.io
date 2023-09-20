@@ -65,7 +65,7 @@ Okay, so event buses are great for dispatching information when we are within an
 But sometimes we don't want to dispatch information.<br/>
 Instead, we may want to *receive* information.
 
-Behold, the holy *question bus*!!! (aka "Reverse event bus")
+Behold, the holy *question bus*!!
 
 (I think it's best explained if I give a problem statement, and an example.)
 

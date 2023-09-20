@@ -1,8 +1,6 @@
 
 # Technical implementation details for UMG
 
-**NOTE: The more technical sections of this article require an understanding of `reverse_event_buses`, check that out if you want a fuller understanding.**
-
 ----------------------------
 
 "Untitled Mod Game" (or "UMG" in short) is a multiplayer
@@ -193,8 +191,7 @@ It also knows NOTHING about "knights" either. The concept of "knights" may not e
 
 ## Mod communication through event buses:
 
-To give Mary and John the tools to solve this problem, we can use *event-bus abstraction.*<br/>
-(This stuff was talked about in the `reverse_event_buses` article.)
+To give Mary and John the tools to solve this problem, we can use [event-buses and question-buses.](./2023-05-10_question_buses)
 
 Specifically, John and Mary need two things:
 - Mary needs an event to be emitted whenever a ridable entity is mounted

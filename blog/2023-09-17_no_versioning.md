@@ -2,7 +2,7 @@
 
 # Arguments for and against versioning
 
-*(This article requires a basic understanding of my vision for Untitled Mod Game. If you are unfamiliar, [have a quick skim](umg_tech_details.md).)*
+*(This article requires a basic understanding of my vision for Untitled Mod Game. If you are unfamiliar, [have a quick skim](./2023-06-2_umg_tech_details).)*
 
 In Untitled Mod Game, there is going to be no versioning of mods.<br/>
 This is a very bold call, and it sounds stupid at face value.

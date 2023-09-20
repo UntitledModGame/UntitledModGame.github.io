@@ -10,29 +10,32 @@ import styles from './index.module.css';
 function HomepageHeader() {
   const {siteConfig} = useDocusaurusContext();
   return (
-    <header className={clsx('hero hero--primary', styles.heroBanner)}>
+    <header class="homepage" className={clsx('hero hero--primary', styles.heroBanner)}>
       <div className="container">
         <img src="img/title_txt_wide.png" class=".title-img"></img>
         <br/>
         <br/>
 
-        <div class="pixel">
+        <div>
           <a href="https://steampowered.com">
-            Free Steam Download 🎮️
+            <img src="img/play_free_steam.png"></img>
           </a>
         </div>
 
-
-        <div className={styles.buttons}>
-       </div>
-        <br/>
-        <div className={styles.buttons}>
-          <Link
-            className="button button--secondary button--lg"
-            to="https://steampowered.com">
-            Discord 😎
-          </Link>
+        <div>
+          <a href="https://steampowered.com">
+            <img src="img/play_free_steam.png"></img>
+          </a>
         </div>
+
+        <div class="container">
+          <button class="btn">
+            <a href="https://steampowered.com">
+              Discord 😎
+            </a>
+          </button>
+        </div>
+
         <br/>
         <img src="img/umg_hand_logo.png"></img>
       </div>

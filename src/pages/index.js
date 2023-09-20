@@ -13,19 +13,19 @@ function HomepageHeader() {
     <header className={clsx('hero hero--primary', styles.heroBanner)}>
       <div className="container">
         <img src="img/title_txt_wide.png" class=".title-img"></img>
-
-        <p className="hero__subtitle">{siteConfig.tagline}</p>
-
-        <div className={styles.buttons}>
-          <Link
-            className="button button--secondary button--lg"
-            to="https://steampowered.com">
-            Free Steam Download 🎮️
-          </Link>
-        </div>
-
+        <br/>
         <br/>
 
+        <div class="pixel">
+          <a href="https://steampowered.com">
+            Free Steam Download 🎮️
+          </a>
+        </div>
+
+
+        <div className={styles.buttons}>
+       </div>
+        <br/>
         <div className={styles.buttons}>
           <Link
             className="button button--secondary button--lg"
@@ -33,14 +33,8 @@ function HomepageHeader() {
             Discord 😎
           </Link>
         </div>
-
-        <p>
-          Untitled Mod Game (or UMG) is a game where all gameplay is built as a mod. With the whole platform being built with modding in mind, the limits are practically endless.
-          <br/>
-          Want to build a giant wall to defend against zombie invaders? Sure! Perhaps you would prefer to play as the zombie horde instead? With UMG's flexible setup, this is possible. The entities you control don't even need to be players; you can walk around worlds as a paintbrush, or a chest if you want!
-          <br/>
-          With the platform's extensive worldediting tools, you can also create completely custom worlds and levels for you and your friends to explore!
-        </p>
+        <br/>
+        <img src="img/umg_hand_logo.png"></img>
       </div>
     </header>
   );

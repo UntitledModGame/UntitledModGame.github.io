@@ -1,3 +1,8 @@
+---
+slug: QBuses
+title: Question buses in UMG
+tags: [design]
+---
 
 # Question buses in Untitled Mod Game
 

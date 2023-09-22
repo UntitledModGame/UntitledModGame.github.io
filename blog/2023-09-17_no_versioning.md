@@ -1,4 +1,8 @@
-
+---
+slug: Versioning
+title: Arguments for and against versioning
+tags: [design]
+---
 
 # Arguments for and against versioning
 

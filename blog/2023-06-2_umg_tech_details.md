@@ -1,3 +1,9 @@
+---
+slug: UMG Tech
+title: Technical implementation details for UMG
+tags: [design]
+---
+
 
 # Technical implementation details for UMG
 

@@ -1,5 +1,5 @@
 ---
-slug: QBuses
+slug: Buses
 title: Question buses in UMG
 tags: [design]
 ---

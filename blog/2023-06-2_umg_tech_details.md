@@ -1,5 +1,5 @@
 ---
-slug: UMG Tech
+slug: UMG_Tech
 title: Technical implementation details for UMG
 tags: [design]
 ---

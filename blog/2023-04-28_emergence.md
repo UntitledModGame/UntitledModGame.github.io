@@ -14,6 +14,8 @@ plenty of successful games out there that are non-emergent.
 But as an indie developer, we are in a field where we **NEED** to put ourselves ahead by taking risks.
 If we don't, we will be outcompeted by others similar to us.
 
+<!--truncate-->
+
 Emergence offers us a way to create way more gameplay opportunities, for very little cost.
 As an indie dev, creating extra gameplay without needing to expend vast amounts of resources
 is very useful.

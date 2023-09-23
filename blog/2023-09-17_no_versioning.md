@@ -1,17 +1,19 @@
 ---
 slug: Versioning
 title: Arguments for and against versioning
-tags: [design]
+tags: [design, umg]
 ---
 
 # Arguments for and against versioning
 
-*(This article requires a basic understanding of my vision for Untitled Mod Game. If you are unfamiliar, [have a quick skim](./2023-06-2_umg_tech_details).)*
+*(This article requires a basic understanding of my vision for Untitled Mod Game. If you are unfamiliar, [have a quick skim](UMG_Tech).)*
 
 In Untitled Mod Game, there is going to be no versioning of mods.<br/>
 This is a very bold call, and it sounds stupid at face value.
 But please, hear me out! 
 This lil article will explain my thought process.
+
+<!--truncate-->
 
 ---------------
 
@@ -41,7 +43,7 @@ There's a very concerning situation where versioning could yield to a bit of a m
 
 Let's do a thought experiment, lets assume that mods ARE versioned in UMG.
 
-As discussed in [my other article](umg_tech_details.md), a central goal of the UMG ecosystem is to ensure hyper-compatibility between mods.
+As discussed in [my other article](UMG_Tech), a central goal of the UMG ecosystem is to ensure hyper-compatibility between mods.
 
 I want to be able to load the `ridable` mod, and have it work fully with the `projectiles` mod. That way, I can ride my horse off into the sunset, weilding my minigun, and rocking a cowboy hat.
 

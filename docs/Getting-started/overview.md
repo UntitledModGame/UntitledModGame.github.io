@@ -7,7 +7,7 @@ sidebar_position: 1
 This overview is meant to be as concise as possible.<br/> 
 I'm not going to waste your time.<br/>
 
-You must be a programmer with some experience in lua to understand this.   
+You must be a programmer with [some experience in lua](https://learnxinyminutes.com/docs/lua/) to understand this.   
 Also, experience in [love2d](https://love2d.org) helps.
 
 # Table of Contents:

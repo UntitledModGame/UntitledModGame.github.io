@@ -1,11 +1,13 @@
 ---
 slug: UMG_Tech
 title: Technical implementation details for UMG
-tags: [design]
+tags: [design, umg]
 ---
 
 
 # Technical implementation details for UMG
+
+<!--truncate-->
 
 ----------------------------
 

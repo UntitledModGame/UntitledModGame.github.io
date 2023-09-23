@@ -1,13 +1,17 @@
+---
+slug: idioms
+title: Common lua idioms
+tags: [coding]
+---
 
 # Common lua idioms
 
-I have been using lua for a while. (About 4 years as of writing this!)
-
-It's a language that I kinda grew up on, and I've learned to love.
-
+I have been using lua for a while. (About 4 years as of writing this!)<br/>
+It's a language that I kinda grew up on, and I've learned to love.<br/>
 This article will contain a list of idioms that are common to see in lua.<br/>
 Lets go!
 
+<!--truncate-->
 
 ## Default values with `or`
 ```lua

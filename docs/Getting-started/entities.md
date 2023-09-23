@@ -16,6 +16,7 @@ There are 2 component types, "shared" and "regular":
 | **Removable?** | No | Yes |
 | **Saved per entity?** | No | Yes |
 | **Overridable?** | Yes; turns into Regular component | No |
+| **Can hold functions?** | Yes | No |
 
 Other than this, Regular components and Shared components affect entities in the same way.<br/>
 Lets see an example!

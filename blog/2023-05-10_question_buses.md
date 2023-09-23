@@ -1,10 +1,14 @@
 ---
 slug: Buses
 title: Question buses in UMG
-tags: [design]
+tags: [design, umg]
 ---
 
 # Question buses in Untitled Mod Game
+
+Question buses are a cool idea! This article will explain what they are.
+
+<!--truncate-->
 
 -------------------
 ## PRELUDE: 

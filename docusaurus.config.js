@@ -116,7 +116,7 @@ const config = {
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} CodeTheory, Ltd. Built with Docusaurus.`,
+        copyright: `This site was made using Docusaurus! :)`,
       },
       prism: {
         theme: lightCodeTheme,

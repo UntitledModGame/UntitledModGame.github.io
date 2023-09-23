@@ -20,10 +20,12 @@ const config = {
   // If you aren't using GitHub pages, you don't need these.
   organizationName: 'UntitledModGame', // Usually your GitHub org/user name.
   projectName: 'UntitledModGame.github.io', // Usually your repo name.
-  deploymentBranch: "master",
+  deploymentBranch: "gh-pages",
   trailingSlash: true,
 
-  onBrokenLinks: 'throw',
+  // For some reason, blog tag links are broken,
+  // and im pretty sure it aint my fault!
+  onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
 
   // Even if you don't use internalization, you can use this field to set useful

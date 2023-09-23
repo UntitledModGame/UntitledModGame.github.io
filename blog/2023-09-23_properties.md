@@ -11,7 +11,7 @@ I.e, maxHealth, damage, speed?
 
 <!--truncate-->
 
-The naive approach is just to have a key->value pair:
+The naive approach is just to store the value directly:
 ```lua
 ent.damage = 5
 
@@ -108,10 +108,10 @@ Likewise, whenever we want to even *access* the damage property, we must recalcu
 
 # Calculation tree + cache:
 
-One thing I haven't really touched on much this article is how the calculation method actually works.
+One thing I haven't really touched on is how the calculation method actually works.
 
 Lets imagine that we are using the `Recalculate whenever` approach.<br/>
-Lets imagine that we have benchmarked our program, and we are running into performance issues due to our Shield system. Our shield system is really complicated, and it requires querying over a bunch of other entities when recalculating.
+Lets say we have benchmarked our program, and we are running into performance issues due to our Shield system. Our shield system is really complicated, and it requires querying over a bunch of other entities when recalculating.
 
 What we could do here is split our setup into a tree:<br/>
 In this example, the `damage` system is querying a bunch of calculator systems to obtain `damage`.

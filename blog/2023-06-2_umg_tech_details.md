@@ -1,7 +1,7 @@
 ---
 slug: UMG_Tech
 title: Technical implementation details for UMG
-tags: [design, umg]
+tags: [design, umg, coding]
 ---
 
 
@@ -14,10 +14,9 @@ tags: [design, umg]
 "Untitled Mod Game" (or "UMG" in short) is a multiplayer
 game that is based on mods.
 
-I've been developing it for many months at this point, and it's been really
-fun!
+I've been developing it for many months at this point, and it's been really fun!
 
-It's setup is similar to that of Garrys Mod or Roblox;
+It's setup is similar to that of Garrys Mod,
 where most playable content is User-generated.
 
 ------------------------------

@@ -18,8 +18,9 @@ const config = {
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'CodeTheory', // Usually your GitHub org/user name.
-  projectName: 'Untitled Mod Game', // Usually your repo name.
+  organizationName: 'UntitledModGame', // Usually your GitHub org/user name.
+  projectName: 'UntitledModGame.github.io', // Usually your repo name.
+  deploymentBranch: "master",
 
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',

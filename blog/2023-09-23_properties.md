@@ -51,8 +51,43 @@ Yeah this is clearly a terrible way to represent properties.
 
 # Ok. How should we do it then?
 
-I don't think there is a better way to do entity properties other than simply recalculating the properties on the fly.<br/>
-We can do it in a few different ways, though.
+Lets create some ideas!
+
+-----------
+
+## Modifier list
+
+IDEA: Have a list of `damageAdders` and `damageMultipliers` for our property.
+```
+ent dmgMultipliers = []
+ent dmgAdders = []
+```
+
+This approach would involve having "modifiers" to the entity property, and when the entity's modifiers are changed, recalculate the property value.
+
+Recall our circle/square example:
+```
+ent enters circle and square:
+dmgMultipliers = [2] 
+dmgAdders = [2] 
+recalculation -> dmg = 14
+
+ent exits:
+dmgMultipliers = [] 
+dmgAdders = [] 
+recalculation -> dmg = 5
+```
+
+Now, TBH, I'm really not a fan of this solution...<br/>
+Mainly because the damage modifiers have to be added AND THEN removed. If we forget to remove it, then we're screwed!<br/>
+This is due to it being stateful. I personally try to avoid state when I can.
+
+Also it's quite restrictive. It's restricting buff types to a flat, unchanging number; and the only operations we can use are addition and multiplication.
+Obviously, we could add support for more exotic buff types, but this is getting a bit bloated.
+
+Surely there's a better way?
+
+------------
 
 
 ## Recalculate per tick
@@ -66,8 +101,20 @@ eachTick(function() {
         ent.damage = calculateDamage(ent)
     }
 })
+
+function calculateDamage(ent) {
+    dmg = ent.baseDamage
+    if circle.contains(ent) {
+        dmg += 2
+    }
+    if square.contains(ent) {
+        dmg *= 2
+    }
+    return dmg
+}
 ```
-But the main glaring "downside" with this approach is that damage values could be incorrect. Take the following example:
+
+However, the main glaring "downside" with this approach is that damage values could be incorrect. Take the following example:
 
 - Every time I shoot a bullet, gain +2 damage for 5 seconds
     - shoots 10 bullets in one tick
@@ -88,7 +135,7 @@ To avoid the above problem, we can recalculate more often.<br/>
 How about we recalculate damage every time we need it? i.e:
 ```lua
 function shootBullet(ent) {
-    dmg = calculateDamage(ent)
+    dmg = calculateDamage(ent) -- same function as above.
     bullet = newBullet(dmg)
 }
 ```
@@ -106,11 +153,10 @@ Likewise, whenever we want to even *access* the damage property, we must recalcu
 
 -------------
 
-# Calculation tree + cache:
 
-One thing I haven't really touched on is how the calculation method actually works.
+## Calculation tree + cache:
 
-Lets imagine that we are using the `Recalculate whenever` approach.<br/>
+Imagine that we are recalculating the property every time we access it.<br/>
 Lets say we have benchmarked our program, and we are running into performance issues due to our Shield system. Our shield system is really complicated, and it requires querying over a bunch of other entities when recalculating.
 
 What we could do here is split our setup into a tree:<br/>
@@ -147,7 +193,7 @@ stateDiagram-v2
 
 You get the idea. :)
 
-To see a clean way as to how this damage system has been implemented in [UMG](../umgtech), take a look at [my article on question buses.](../buses)
+To understand to how the damage calculation system has been implemented in [UMG](../umgtech), take a look at [my article on question buses.](../buses)
 
 Thanks for reading!
 - Oli

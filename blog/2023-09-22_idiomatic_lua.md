@@ -65,7 +65,7 @@ print(undefined_variable_34389439) -- nil
 -- no error!
 ```
 This is a bit weird, and some people don't like it.<br/>
-But we can change this with `__index` and `setmetable`.
+But we can change this with `__index` and `setmetatable`.
 
 In lua, `_G` is the special table that holds all the globals.
 ```lua

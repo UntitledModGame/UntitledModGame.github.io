@@ -127,6 +127,9 @@ const config = {
         darkTheme: darkCodeTheme,
         additionalLanguages: ['lua']
       },
+      colorMode: {
+        defaultMode: "dark"
+      }
     }),
 };
 

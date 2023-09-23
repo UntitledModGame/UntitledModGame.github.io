@@ -1,5 +1,5 @@
 ---
-slug: UMG_Tech
+slug: umgtech
 title: Technical implementation details for UMG
 tags: [design, umg, coding]
 ---
@@ -198,7 +198,7 @@ It also knows NOTHING about "knights" either. The concept of "knights" may not e
 
 ## Mod communication through event buses:
 
-To give Mary and John the tools to solve this problem, we can use [event-buses and question-buses.](./2023-05-10_question_buses)
+To give Mary and John the tools to solve this problem, we can use [event-buses and question-buses.](../buses)
 
 Specifically, John and Mary need two things:
 - Mary needs an event to be emitted whenever a ridable entity is mounted

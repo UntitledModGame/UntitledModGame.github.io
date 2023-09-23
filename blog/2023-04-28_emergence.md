@@ -1,5 +1,5 @@
 ---
-slug: Emergence
+slug: emergence
 title: Emergence in games
 tags: [gamedesign, opinion]
 ---

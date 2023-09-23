@@ -21,6 +21,7 @@ const config = {
   organizationName: 'UntitledModGame', // Usually your GitHub org/user name.
   projectName: 'UntitledModGame.github.io', // Usually your repo name.
   deploymentBranch: "master",
+  trailingSlash: true,
 
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',

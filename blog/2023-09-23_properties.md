@@ -147,7 +147,7 @@ stateDiagram-v2
 
 You get the idea. :)
 
-To see a clean way as to how this damage system has been implemented in [UMG](UMG_Tech), take a look at [my article on question buses.](Buses)
+To see a clean way as to how this damage system has been implemented in [UMG](../umgtech), take a look at [my article on question buses.](../buses)
 
 Thanks for reading!
 - Oli

@@ -15,7 +15,7 @@ Here is the link to the video tutorial, it should take less than 15 minutes.
 
 ------------
 
-## Looking to learn more? Check out the [overview](Getting-started/overview)
+## Looking to learn more? Check out the [overview](../Getting-started/overview)
 
 
 

@@ -1,5 +1,5 @@
 ---
-slug: idioms
+slug: luaidioms
 title: Common lua idioms
 tags: [coding]
 ---

@@ -2,7 +2,7 @@
 # Oli notes:
 
 
-`run run start` to build and test the site, on `localhost:3000`
+`npm run start` to build and test the site, on `localhost:3000`
 
 
 

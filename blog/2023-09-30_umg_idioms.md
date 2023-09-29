@@ -11,51 +11,59 @@ A list of idioms that are common in the UMG ecosystem.
 
 ------------------
 
-# Base-mod Files:
+# Base-mod Files
 These files aren't compulsory, but it is common practice to have them are generally found in most base mods:
 
 `mod/components.md` - defines the components for this mod
-`mod/mod_questions.lua` - defines the questions for this mod (see [buses](Buses))
-`mod/mod_events.lua` - defines the events for this mod (see [buses](Buses))
+`mod/mod_questions.lua` - defines the questions for this mod (see `umg.defineQuestion`)
+`mod/mod_events.lua` - defines the events for this mod (see `umg.defineEvent`)
 
 
 ------------------
 
 # Runtime client/server checks:
 Often, we will have code that is running on BOTH client-side AND server-side.<br/>
-For example, the `onDeath` callback is called on both client and server.
+(For example, the `onDeath` callback)
 
-However, what if we want to call a client-specific function?<br/>
-Well, we can check directly what side we are on!
+To get server/client specific behaviour, we can check what side we are on at runtime!
 ```lua
 local function onDeath(ent)
-    -- onDeath is a function thats called on client AND server
+    -- onDeath is a function thats called on client AND server.
     if server then
-        -- only called on server
-        chat.privateMessage(ent.controller, "your player has died!")
+        -- this branch is only ran on server
+        print("I AM FROM SERVER")
     elseif client then
-        -- only called client
-        juice.particles("dust", ent,)
+        -- only ran on client! :)
+        print("hi from client!")
     end
 end
 ```
-Another example:<br/>
-What if we want to export some functions on clientside only?
+You get the idea! :)
+
+------------------
+
+# Classes:
+Lua doesn't have classes, neither does the UMG engine.<br/>
+However, the `objects` base mod provides classes:
 ```lua
--- This code runs on BOTH client AND server:
-local api = {}
+local MyClass = objects.Class("my_mod:MyClass")
 
-
-api.func = require("shared.func1")
-api.otherFunc = require("shared.func2")
-
-if client then
-    -- but `clientFunc` is only available on clientside!
-    api.clientFunc = require("client.func1")
+function MyClass:init(...)
+    -- init is a special function that is called on instantiation
+    print("init!", ...)
 end
 
-umg.expose("api", api)
+function MyClass:method()
+    print("method call: ", self)
+end
+
+local obj = MyClass(1,2,3)
+-- prints:  init! 1 2 3
 ```
+The reason this is better than `setmetatable` is because `objects.Class` 
+will automatically register `MyClass` with `umg.register`.
+
+WARNING: When defining a class, make sure to define on BOTH client AND server!!!
 
 
 ------------------
@@ -68,49 +76,8 @@ ent.myComponent = function() end
 This is because in UMG, newly defined components are automatically sent over the network.<br/>
 And in UMG, functions can't be serialized; so an error is thrown.
 
-You'd get the same error doing something like this:
-```lua
-local Class = {}
-function Class:hi()
-    print("hi: ", self)
-end
-
-local obj = setmetatable({}, {__index = Class})
-
-ent.foo = obj --  <-- this will error!
--- because function Class.hi is serialized
-```
-This is because UMG automatically serializes the whole data structure, no matter how deep it is.
-
-### *How to have an OOP object as a component:*
-We can use `umg.register` on BOTH serverside and clientside to register a common resource:
-```lua
-local Class = {}
-function Class:hi()
-    print("hi: ", self)
-end
-
--- Make sure this is on BOTH clientside AND serverside!
-umg.register("mod:MyClass", Class)
--- now, `Class` isn't sent across the network.
--- Instead, the serializer will use the reference string "mod:MyClass"
-
-local obj = setmetatable({}, {__index = Class})
-
-ent.foo = obj -- ok now! :)
-```
-There's also a shorthand for this, in the `objects` mod:
-```lua
-local MyClass = objects.Class("mod:MyClass")
--- objects.Class calls `umg.register` internally.
-
-local obj = MyClass() -- instantiate like this!
-```
-
-------------
-
-### *How to have functions as components:*
-Use a `shared` component, and define the function in the entity-type:
+But we *can* have functions as shared components, by defining them inside the entity type.<br/>
+This is because shared-components aren't sent over the network.
 ```lua
 -- my_mod/entities/my_entity.lua
 return {
@@ -120,10 +87,6 @@ return {
     ...
 }
 ```
-Note that with shared-components, we cannot change the component at runtime.
-
-Awesome, done!
-
 
 --------------------
 

@@ -60,10 +60,11 @@ end
 local obj = MyClass(1,2,3)
 -- prints:  init! 1 2 3
 ```
-The reason this is better than `setmetatable` is because `objects.Class` 
+The reason this is better than `setmetatable`, is because `objects.Class` 
 will automatically register `MyClass` with `umg.register`.
 
-WARNING: When defining a class, make sure to define on BOTH client AND server!!!
+(WARNING: When defining a class, make sure to define on BOTH client AND server!!!
+Else, you'll run into big bad issues.)
 
 
 ------------------
@@ -136,8 +137,9 @@ end)
 ```
 
 
+-----------------
 
-# Method-Event:
+# Method-Event in base mods:
 When an event happens concerning an entity, it's common to do something like this:
 ```lua
 -- ent dies!

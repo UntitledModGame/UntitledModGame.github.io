@@ -11,12 +11,12 @@ A list of idioms that are common in the UMG ecosystem.
 
 ------------------
 
-# Base-mod Files
-These files aren't compulsory, but it is common practice to have them are generally found in most base mods:
+# Base-mod files:
+These files aren't compulsory, but it is common practice to put them in base mods:
 
-`mod/components.md` - defines the components for this mod
-`mod/mod_questions.lua` - defines the questions for this mod (see `umg.defineQuestion`)
-`mod/mod_events.lua` - defines the events for this mod (see `umg.defineEvent`)
+`mod/components.md` - defines the components for this mod, in markdown
+`mod/mod_questions.lua` - where `umg.defineQuestion` is used
+`mod/mod_events.lua` - where `umg.defineEvent` is used
 
 
 ------------------

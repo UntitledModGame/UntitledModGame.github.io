@@ -28,22 +28,33 @@ For example, the `onDeath` callback is called on both client and server.
 However, what if we want to call a client-specific function?<br/>
 Well, we can check directly what side we are on!
 ```lua
--- entities/my_entity.lua
-
--- ent definition:
-return {
-    onDeath = function(ent)
-        -- onDeath is a function thats called on client AND server
-        if server then
-            -- this function is only available on client
-            chat.privateMessage(ent.controller, "your player has died!")
-        elseif client then
-            -- a
-            juice.particles("dust", ent,)
-        end
+local function onDeath(ent)
+    -- onDeath is a function thats called on client AND server
+    if server then
+        -- only called on server
+        chat.privateMessage(ent.controller, "your player has died!")
+    elseif client then
+        -- only called client
+        juice.particles("dust", ent,)
     end
-}
+end
+```
+Another example:<br/>
+What if we want to export some functions on clientside only?
+```lua
+-- This code runs on BOTH client AND server:
+local api = {}
 
+
+api.func = require("shared.func1")
+api.otherFunc = require("shared.func2")
+
+if client then
+    -- but `clientFunc` is only available on clientside!
+    api.clientFunc = require("client.func1")
+end
+
+umg.expose("api", api)
 ```
 
 

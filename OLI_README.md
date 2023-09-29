@@ -2,7 +2,11 @@
 # Oli notes:
 
 
+### Testing:
 `npm run start` to build and test the site, on `localhost:3000`
+
+### Deploying:
+`npm run deploy`
 
 
 

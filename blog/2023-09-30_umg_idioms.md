@@ -129,8 +129,17 @@ umg.answer("xy:getSpeedMultiplier", function(ent)
 end)
 ```
 
-
 -----------------
+
+# Typecheck naming convention:
+When using `typecheck` mod, it's common to end the typecheck function with `Tc`.<br/>
+For example:
+```lua
+local addTc = typecheck.assert("number", "number")
+```
+(The `Tc` stands for "type check")
+
+-----------------------
 
 # Method-Event in base mods:
 When an event happens concerning an entity, it's common to do something like this:

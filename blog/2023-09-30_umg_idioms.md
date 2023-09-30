@@ -5,9 +5,19 @@ tags: [coding, umg]
 ---
 
 # UMG Idioms
-A list of idioms that are common in the UMG ecosystem.
+A list of idioms for the UMG ecosystem.
 
 <!--truncate-->
+
+-----------------
+
+# Checking if an entity has a component:
+```lua
+if ent.foo then
+    print("entity has component foo!")
+end
+```
+This is the same as `ent:hasComponent("foo")`
 
 ------------------
 
@@ -28,9 +38,9 @@ Often, we will have code that is running on BOTH client-side AND server-side.<br
 To get server/client specific behaviour, we can check what side we are on at runtime!
 ```lua
 local function onDeath(ent)
-    -- onDeath is a function thats called on client AND server.
+    -- called on client AND server.
     if server then
-        -- this branch is only ran on server
+        -- this branch is only ran on server.
         print("I AM FROM SERVER")
     elseif client then
         -- only ran on client! :)
@@ -93,12 +103,9 @@ return {
 
 
 # Component-wise bus response:
-Component-wise bus response is when we add a response to an event/question bus, and only respond to it if the entity has a certain component.<br/>
+Listen to an event/question, and only respond if the entity has a certain component:<br/>
 This setup is VERY common (and important) in UMG.
 
------------------
-
-For example:
 - If an entity has the `.halo` component:
     - --> draw a circle above it.
 ```lua
@@ -109,20 +116,6 @@ umg.on("rendering:drawEntity", function(ent)
     end
 end)
 ```
-
-Another example:
-```lua
-umg.on("mortality:entityDeath", function(ent)
-    if ent.fire then
-        local explosionSize = 5
-        makeExplosion(ent, explosionSize)
-    end
-end)
-```
-- If an entity is on fire when it dies:
-    - --> make an explosion
-
---------------
 
 Comp-wise bus response also works with question buses too:
 - If an entity is covered in goo:

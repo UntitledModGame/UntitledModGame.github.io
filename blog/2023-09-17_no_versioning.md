@@ -1,19 +1,19 @@
 ---
 slug: versioning
-title: Arguments for and against versioning
+title: UMG has no versioning
 tags: [design, umg]
 ---
 
-# Arguments for and against versioning
-
-*(This article requires a basic understanding of my vision for Untitled Mod Game. If you are unfamiliar, [have a quick skim](umgtech).)*
+# UMG has no versioning
 
 In Untitled Mod Game, there is going to be no versioning of mods.<br/>
 This is a very bold call, and it sounds stupid at face value.
-But please, hear me out! 
+But please, hear me out!<br/>
 This lil article will explain my thought process.
 
 <!--truncate-->
+
+*(This article requires a basic understanding of my vision for Untitled Mod Game. If you are unfamiliar, [have a quick skim](umgtech).)*
 
 ---------------
 
@@ -37,15 +37,16 @@ Now, before we start, I'd just like to note,
 I'm **100% FOR** the use of versioning, and I think you'd have to be an idiot not to see the value in it for 99% of situations.
 
 But UMG is a bit special in what it's trying to achieve.<br/>
-There's a very concerning situation where versioning could yield to a bit of a mess, I'll explain it below.
+There's a very concerning situation where versioning could cause a bit of a mess, I'll explain it below.
 
 --------------------
 
-Let's do a thought experiment, lets assume that mods ARE versioned in UMG.
+Let's do a thought experiment.<br/>
+Lets assume that mods ARE versioned in UMG.
 
 As discussed in [my other article](umgtech), a central goal of the UMG ecosystem is to ensure hyper-compatibility between mods.
 
-I want to be able to load the `ridable` mod, and have it work fully with the `projectiles` mod. That way, I can ride my horse off into the sunset, weilding my minigun, and rocking a cowboy hat.
+I want to be able to load the `ridable` mod, and have it work fully with the `projectiles` mod. That way, I can ride my horse off into the sunset, wielding my minigun, and rocking a cowboy hat.
 
 Ideally, the `projectiles` mod should not need to care about the `ridable` mod. In fact, both mods should not know about each other, since they are unrelated.<br/>
 However, both mods will still need to tag onto other mods.

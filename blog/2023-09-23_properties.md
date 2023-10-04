@@ -11,7 +11,7 @@ I.e, maxHealth, damage, speed?
 
 <!--truncate-->
 
-The naive approach is just to store the value directly:
+The naive approach is to directly mutate the value:
 ```lua
 ent.damage = 5
 
@@ -46,8 +46,7 @@ ent leaves square (dmg = 12/2 = 6)
 ent dmg = 6
 ```
 Uh oh!<br/>
-Yeah this is clearly a terrible way to represent properties.
-
+Yeah we clearly need a smarter system.
 
 # Ok. How should we do it then?
 
@@ -82,10 +81,10 @@ Now, TBH, I'm really not a fan of this solution...<br/>
 Mainly because the damage modifiers have to be added AND THEN removed. If we forget to remove it, then we're screwed!<br/>
 This is due to it being stateful. I personally try to avoid state when I can.
 
-Also it's quite restrictive. It's restricting buff types to a flat, unchanging number; and the only operations we can use are addition and multiplication.
-Obviously, we could add support for more exotic buff types, but this is getting a bit bloated.
-
-Surely there's a better way?
+**PROS:**
+- Efficient: Only recalculates when something changes 
+**CONS:**
+- Stateful, fragile
 
 ------------
 
@@ -104,12 +103,12 @@ eachTick(function() {
 
 function calculateDamage(ent) {
     dmg = ent.baseDamage
-    if circle.contains(ent) {
-        dmg += 2
+    for shape in shapeList {
+        if shape.contains(ent) {
+            shape.buff(ent)
+        }
     }
-    if square.contains(ent) {
-        dmg *= 2
-    }
+    ... -- other calculations here
     return dmg
 }
 ```
@@ -191,7 +190,12 @@ stateDiagram-v2
 
 --------------
 
-You get the idea. :)
+What's cool, is that *all three* previous approaches work perfectly well with this tree setup.
+
+Perhaps the effect system already has some internal state upon entities? In that case, there would be no downside to the `Modifier list` approach.<br/>
+We can have our cake, and eat it too.
+
+--------------
 
 To understand to how the damage calculation system has been implemented in [UMG](../umgtech), take a look at [my article on question buses.](../buses)
 

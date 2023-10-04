@@ -7,15 +7,14 @@ tags: [design, opinion]
 
 # Results orientated gamedev, and why it's bad
 
-When a lot of developers start creating their game, they probably start with the end gameplay in mind.<br/>
-I think that this is a terrible way to design games.<br/>
-This article will explain why I think so.
+I think that developing games purely from a results-orientated perspective is bad.
+This article will explain my reasoning, and is a successor to [my other article on emergence.](../emergence)
 
 <!-- truncate -->
 
 ### UH OH: HOT TAKES INCOMING!
 
-This article is a successor to [my article on emergence.](../emergence)
+In this article, I discuss the difference between "results orientated" development, and "systems orientated" development.
 
 Ok. So what do I mean when I say "results orientated"?<br/>
 When I say a development cycle is "results orientated", I mean that the developers start with the player interactions/gameplay in mind, and develop the product from there.

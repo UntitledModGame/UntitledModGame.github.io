@@ -4,10 +4,37 @@
         <title>Untitled Mod Game Blog</title>
         <link>https://your-docusaurus-test-site.com/blog</link>
         <description>Untitled Mod Game Blog</description>
-        <lastBuildDate>Sat, 30 Sep 2023 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Wed, 04 Oct 2023 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
+        <item>
+            <title><![CDATA[Results orientated gamedev, and why it's bad]]></title>
+            <link>https://your-docusaurus-test-site.com/blog/results_orientated_gamedev</link>
+            <guid>https://your-docusaurus-test-site.com/blog/results_orientated_gamedev</guid>
+            <pubDate>Wed, 04 Oct 2023 00:00:00 GMT</pubDate>
+            <description><![CDATA[When a lot of developers start creating their game, they probably start with the end gameplay in mind.]]></description>
+            <content:encoded><![CDATA[<p>When a lot of developers start creating their game, they probably start with the end gameplay in mind.<br>
+I think that this is a terrible way to design games.<br>
+This article will explain why I think so.</p><h3 class="anchor anchorWithStickyNavbar_LWe7" id="uh-oh-hot-takes-incoming">UH OH: HOT TAKES INCOMING!<a href="#uh-oh-hot-takes-incoming" class="hash-link" aria-label="Direct link to UH OH: HOT TAKES INCOMING!" title="Direct link to UH OH: HOT TAKES INCOMING!">​</a></h3><p>This article is a successor to <a href="/blog/emergence/">my article on emergence.</a></p><p>Ok. So what do I mean when I say "results orientated"?<br>
+When I say a development cycle is "results orientated", I mean that the developers start with the player interactions/gameplay in mind, and develop the product from there.</p><hr><p>Take for example, this development cycle:</p><ul><li>"We want gameplay where the players shoot zombies, and build fortifications to defend against zombies".</li></ul><p>Ok.<br>
+With this goal in mind, the development cycle will continue as expected... When the cycle is finished, we will have a basic product. Players will be able to build fortifications, and use their guns to fend off the waves of undead.<br></p><p>But the problem with this setup is that we have (probably) created a highly one-dimensional setup.<br>
+Does it matter if we have hordes of undead to fight, if our systems aren't good?</p><p>When I talk "systems", I don't mean invisible architecture; I mean real systems that the player can observe and intuitively interact with.<br>
+The building/fortification system is great! cool! But did we implement it in a way that gives depth, <em>beyond</em> the closed scope of the development cycle?<br>
+Sure, our fortifications are great at dealing with zombies! But next update, we are adding multiplayer. Will our fortifications be able to deal with an onslaught of raiders from the other side of the server?<br>
+Maybe! But even if they <em>do</em> succeed in fending off player raiders, they weren't meant to, and we got lucky.<br>
+And this is our problem.</p><p>It would be much better if we started off with a more generic goal, and started development from a <em>systems orientated</em> perspective.</p><p>For example:</p><ul><li>"We want a system where the player can manipulate structures to serve their goals"</li></ul><p>Already, this looks way more promising.<br>
+Lets ignore zombies. Lets ignore raiders. Lets just give our players the <em>tools</em> to create and manipulate structures in a comprehensive fashion. From there, whatever other systems/mechanics we may add in the future, they are guaranteed to mesh well with our building system, since we made our system open ended.</p><p>I call this, "systems orientated" development.</p><hr><h1>Chess!</h1><p><img loading="lazy" alt="chess" src="/assets/images/chess2-3ab90b85683366c5880bd577fcdb3d24.jpg" width="540" height="360" class="img_ev3q"></p><hr><p>Chess is epic.<br>
+It's one of the best games to ever exist. And it's popularity proves it.</p><p>Chess was a game that was developed from a "systems orientated" perspective, as opposed to a "results orientated" perspective.</p><hr><p>Ok! Lets have a look at some of the core mechanics of chess, and lets imagine what Chess would look like if it was developed with the end-result in mind.</p><hr><p><strong>Forks.</strong> &lt;-- These things <a href="https://en.wikipedia.org/wiki/Fork_(chess)" target="_blank" rel="noopener noreferrer">are an important part of chess.</a><br>
+However, lets stop to ponder.</p><p>The genius cavemen who created chess... did they develop chess with forks in mind? </p><ul><li><strong>Caveman Bob:</strong> "Hey Caveman Fred, ooga booga. You know what I want? I want a game where there are <a href="https://en.wikipedia.org/wiki/Pin_(chess)" target="_blank" rel="noopener noreferrer">PINS</a>, and <a href="https://en.wikipedia.org/wiki/Fork_(chess)" target="_blank" rel="noopener noreferrer">FORKS!</a>"</li><li><strong>Caveman Fred:</strong> "Ooga booga, that sounds like a GREAT idea!"</li></ul><p>So I can guarantee that this never happened.<br>
+Why? Well, because forks and pins <em>don't exist outside of chess.</em><br>
+They were created as a result of chess's amazing systems.</p><p>If we try to create truly interesting/emergent gameplay from a results-orientated perspective, we will fail. Because the most interesting game mechanics simply <em>don't exist</em>, unless the systems exist to back them up.</p><p>Consider:</p><ul><li><strong>Caveman Bob:</strong> "How about we make a game where positional strategy is really important?"</li><li><strong>Caveman Fred:</strong> "Ooga booga! OK!"</li><li><strong>Caveman Bob:</strong> "Hmm. We need a system where pieces can link up and connect with each other."</li><li><strong>Caveman Fred:</strong> "What if pieces can capture other pieces? That way, by positioning your pieces, you can protect them."</li></ul><p>From there, Fred and Bob would go on to create the most influential game in human history, (besides Go).</p><p>Note that they didn't start with a direct end goal in mind. They started with a vague idea for an interesting concept.<br>
+Bob and Fred developed chess from a <em>systems-orientated</em> perspective. And as a result, pins and forks were implemented for <em>free</em>, which are super important gameplay elements in chess.</p><p>And that's pretty much my main point.</p><p>I know, it feels weird. It feels dumb. My inner project-manager is enraged!<br>
+But I truly believe that developing systems, and having <a href="/blog/emergence/">systematic emergence</a> in games is <strong>way more important</strong> than having a direct end-result that you can work towards.</p><hr><p>Good systems create gameplay.<br>
+But good gameplay cannot create systems.</p><p>Thanks for reading this opinion piece! :)</p><ul><li>Oli</li></ul>]]></content:encoded>
+            <category>design</category>
+            <category>opinion</category>
+        </item>
         <item>
             <title><![CDATA[UMG Idioms]]></title>
             <link>https://your-docusaurus-test-site.com/blog/umgidioms</link>
@@ -66,20 +93,21 @@ Realize though, that all functions in lua are anonymous and first-class. <code>p
             <category>coding</category>
         </item>
         <item>
-            <title><![CDATA[Arguments for and against versioning]]></title>
+            <title><![CDATA[UMG has no versioning]]></title>
             <link>https://your-docusaurus-test-site.com/blog/versioning</link>
             <guid>https://your-docusaurus-test-site.com/blog/versioning</guid>
             <pubDate>Sun, 17 Sep 2023 00:00:00 GMT</pubDate>
-            <description><![CDATA[(This article requires a basic understanding of my vision for Untitled Mod Game. If you are unfamiliar, have a quick skim.)]]></description>
-            <content:encoded><![CDATA[<p><em>(This article requires a basic understanding of my vision for Untitled Mod Game. If you are unfamiliar, <a href="/blog/versioning/umgtech/">have a quick skim</a>.)</em></p><p>In Untitled Mod Game, there is going to be no versioning of mods.<br>
+            <description><![CDATA[In Untitled Mod Game, there is going to be no versioning of mods.]]></description>
+            <content:encoded><![CDATA[<p>In Untitled Mod Game, there is going to be no versioning of mods.<br>
 This is a very bold call, and it sounds stupid at face value.
-But please, hear me out!
-This lil article will explain my thought process.</p><hr><p>In pretty much all software packaging systems, software has
+But please, hear me out!<br>
+This lil article will explain my thought process.</p><p><em>(This article requires a basic understanding of my vision for Untitled Mod Game. If you are unfamiliar, <a href="/blog/versioning/umgtech/">have a quick skim</a>.)</em></p><hr><p>In pretty much all software packaging systems, software has
 version information.<br>
 Versioning is great, because it allows introducing breaking changes to software without harming existing users.</p><p>And that's pretty much the main "point" of versioning, is dealing with breaking changes.
 If users don't want to deal with breaking changes, they can just stay on an older version.</p><p>Pros of versioning:</p><ul><li>Allows developers to break compatibility in favour of better features or removal of tech debt</li><li>Users can use older versions if they want, granting a lot more freedom</li></ul><p>Cons of versioning: (no major cons, really)</p><ul><li>Userbase can become fragmented</li></ul><hr><p>Now, before we start, I'd just like to note,
 I'm <strong>100% FOR</strong> the use of versioning, and I think you'd have to be an idiot not to see the value in it for 99% of situations.</p><p>But UMG is a bit special in what it's trying to achieve.<br>
-There's a very concerning situation where versioning could yield to a bit of a mess, I'll explain it below.</p><hr><p>Let's do a thought experiment, lets assume that mods ARE versioned in UMG.</p><p>As discussed in <a href="/blog/versioning/umgtech/">my other article</a>, a central goal of the UMG ecosystem is to ensure hyper-compatibility between mods.</p><p>I want to be able to load the <code>ridable</code> mod, and have it work fully with the <code>projectiles</code> mod. That way, I can ride my horse off into the sunset, weilding my minigun, and rocking a cowboy hat.</p><p>Ideally, the <code>projectiles</code> mod should not need to care about the <code>ridable</code> mod. In fact, both mods should not know about each other, since they are unrelated.<br>
+There's a very concerning situation where versioning could cause a bit of a mess, I'll explain it below.</p><hr><p>Let's do a thought experiment.<br>
+Lets assume that mods ARE versioned in UMG.</p><p>As discussed in <a href="/blog/versioning/umgtech/">my other article</a>, a central goal of the UMG ecosystem is to ensure hyper-compatibility between mods.</p><p>I want to be able to load the <code>ridable</code> mod, and have it work fully with the <code>projectiles</code> mod. That way, I can ride my horse off into the sunset, wielding my minigun, and rocking a cowboy hat.</p><p>Ideally, the <code>projectiles</code> mod should not need to care about the <code>ridable</code> mod. In fact, both mods should not know about each other, since they are unrelated.<br>
 However, both mods will still need to tag onto other mods.
 Both the <code>projectiles</code> mod, and the <code>ridable</code> mod will need the <code>dimensions</code> mod to be loaded, so that they can fudge around with what dimensions steeds are in, and what dimensions projectiles are spawned in.</p><p>But lets assume that there was a breaking change in the <code>dimensions</code> mod, from version 0.0 to version 1.0, which overhauled the way entities are stored inside of dimensions, and changed a few things about the API.</p><p>Lets say that the <code>riding</code> mod updated to the latest version, but the author of the <code>projectiles</code> mod disagreed with the changes, so they stayed on the older version.<br>
 Suddenly, we would have a setup like so:</p><p>Now, what fricken SUCKS, is that <code>riding</code> and <code>projectiles</code> are no longer compatible.<br>

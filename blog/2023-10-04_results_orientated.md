@@ -71,36 +71,37 @@ However, lets stop to ponder.
 
 The genius cavemen who created chess... did they develop chess with forks in mind? 
 
-> Caveman Bob: "Hey Caveman Fred, ooga booga. You know what I want? I want a game where there are [PINS](https://en.wikipedia.org/wiki/Pin_(chess)), and [FORKS!](https://en.wikipedia.org/wiki/Fork_(chess))"
-> Caveman Fred: "Ooga booga, that sounds like a GREAT idea!"
+- **Caveman Bob:** "Hey Caveman Fred, ooga booga. You know what I want? I want a game where there are [PINS](https://en.wikipedia.org/wiki/Pin_(chess)), and [FORKS!](https://en.wikipedia.org/wiki/Fork_(chess))"
+- **Caveman Fred:** "Ooga booga, that sounds like a GREAT idea!"
 
 So I can guarantee that this never happened.<br/>
 Why? Well, because forks and pins *don't exist outside of chess.*<br/>
 They were created as a result of chess's amazing systems.
 
-If we try to create truly interesting/emergent gameplay from a results-orientated perspective, we will fail. Because the most interesting mechanics simply *don't exist*, unless the systems exist in the first place.
+If we try to create truly interesting/emergent gameplay from a results-orientated perspective, we will fail. Because the most interesting game mechanics simply *don't exist*, unless the systems exist to back them up.
 
 Consider:
-> Caveman Bob: "How about we make a game where positional strategy is really important?"
-> Caveman Fred: "Ooga booga! OK!
-> Caveman Bob: "Hmm. We need a system where pieces can link up and connect with each other."
-> Caveman Fred: "What if pieces can capture other pieces? That way, by positioning your pieces, you can protect them.
+- **Caveman Bob:** "How about we make a game where positional strategy is really important?"
+- **Caveman Fred:** "Ooga booga! OK!"
+- **Caveman Bob:** "Hmm. We need a system where pieces can link up and connect with each other."
+- **Caveman Fred:** "What if pieces can capture other pieces? That way, by positioning your pieces, you can protect them."
 
 From there, Fred and Bob would go on to create the most influential game in human history, (besides Go).
 
-Note that they didn't start with a direct end goal in mind. They started with a vague idea for an interesting concept.
-
+Note that they didn't start with a direct end goal in mind. They started with a vague idea for an interesting concept.<br/>
 Bob and Fred developed chess from a *systems-orientated* perspective. And as a result, pins and forks were implemented for *free*, which are super important gameplay elements in chess.
 
 And that's pretty much my main point.
 
 I know, it feels weird. It feels dumb. My inner project-manager is enraged!<br/>
-But I truly believe that developing systems, and having [systematic emergence](../emergence) in games is **way more important** than having a tangible end result.
+But I truly believe that developing systems, and having [systematic emergence](../emergence) in games is **way more important** than having a direct end-result that you can work towards.
+
+---------------
 
 Good systems create gameplay.<br/>
 But good gameplay cannot create systems.
 
-Thanks for reading this opinion piece!
+Thanks for reading this opinion piece! :)
 - Oli
 
 

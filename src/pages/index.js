@@ -11,11 +11,17 @@ function HomepageHeader() {
       .centered {
         margin: auto;
       }
+      .centered img {
+        margin: auto;
+      }
+      .centered a {
+        margin: auto;
+      }
   `
   return (
     <header class="homepage" className={clsx('hero hero--primary', styles.heroBanner)}>
       <style>{style}</style>
-      <div className="container">
+      <div className="container" class="outer">
         <div class="centered">
           <img src="img/title_txt_wide.png" class=".title-img"></img>
         </div>
@@ -35,7 +41,9 @@ function HomepageHeader() {
         </div>
 
         <br/>
-        <img src="img/umg_hand_logo.png"></img>
+        <div class="centered">
+          <img src="img/umg_hand_logo.png"></img>
+        </div>
       </div>
     </header>
   );

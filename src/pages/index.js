@@ -7,20 +7,28 @@ import HomepageFeatures from '@site/src/components/HomepageFeatures';
 import styles from './index.module.css';
 
 function HomepageHeader() {
+  const style = `
+      .centered {
+        margin: auto;
+      }
+  `
   return (
     <header class="homepage" className={clsx('hero hero--primary', styles.heroBanner)}>
+      <style>{style}</style>
       <div className="container">
-        <img src="img/title_txt_wide.png" class=".title-img"></img>
+        <div class="centered">
+          <img src="img/title_txt_wide.png" class=".title-img"></img>
+        </div>
         <br/>
         <br/>
 
-        <div>
+        <div class="centered">
           <a href="https://steampowered.com">
             <img src="img/play_free_steam.png"></img>
           </a>
         </div>
 
-        <div>
+        <div class="centered">
           <a href="https://steampowered.com">
             <img src="img/join_discord.png"></img>
           </a>

@@ -76,30 +76,7 @@ will automatically register `MyClass` with `umg.register`.
 (WARNING: When defining a class, make sure to define on BOTH client AND server!!!
 Else, you'll run into big bad issues.)
 
-
-------------------
-
-# Functions in components:
-You may be horrified to realize that in UMG, doing this on serverside will cause a runtime error:
-```lua
-ent.myComponent = function() end
-```
-This is because in UMG, newly defined components are automatically sent over the network.<br/>
-And in UMG, functions can't be serialized; so an error is thrown.
-
-But we *can* have functions as shared components, by defining them inside the entity type.<br/>
-This is because shared-components aren't sent over the network.
-```lua
--- my_mod/entities/my_entity.lua
-return {
-    myComponent = function() end
-    -- this is ok! :)
-
-    ...
-}
-```
-
---------------------
+----------------
 
 
 # Component-wise bus response:
@@ -128,6 +105,60 @@ umg.answer("xy:getSpeedMultiplier", function(ent)
     return 1
 end)
 ```
+
+------------------
+
+# Entity inheritance:
+Sometimes, we may want to define an entity "base class", and extend it for a bunch of similar entity-types.
+
+We can do this by defining a function that mutates an entity definition:
+```lua
+-- shared/abstract_entities.lua
+
+-- make sure its global!
+function enemyType(etype)
+    etype.category = "enemy",
+    etype.attack = etype.attack or {
+        type = "melee",
+        range = MELEE_RANGE
+    };
+end
+```
+And then, when we define our entities, we can access our global function `enemyType`:
+```lua
+-- entities/my_enemy.lua
+
+return enemyType({
+    image = "enemy1",
+    baseMaxHealth = 100,
+    baseStrength = 30
+})
+```
+You get the idea :)
+
+
+------------------
+
+# Functions in components:
+You may be horrified to realize that in UMG, doing this on serverside will cause a runtime error:
+```lua
+ent.myComponent = function() end
+```
+This is because in UMG, newly defined components are automatically sent over the network.<br/>
+And in UMG, functions can't be serialized; so an error is thrown.
+
+But we *can* have functions as shared components, by defining them inside the entity type.<br/>
+This is because shared-components aren't sent over the network.
+```lua
+-- my_mod/entities/my_entity.lua
+return {
+    myComponent = function() end
+    -- this is ok! :)
+
+    ...
+}
+```
+
 
 -----------------
 

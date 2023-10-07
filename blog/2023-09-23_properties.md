@@ -83,6 +83,7 @@ This is due to it being stateful. I personally try to avoid state when I can.
 
 **PROS:**
 - Efficient: Only recalculates when something changes 
+
 **CONS:**
 - Stateful, fragile
 

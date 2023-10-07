@@ -13,7 +13,7 @@ This lil article will explain my thought process.
 
 <!--truncate-->
 
-*(This article requires a basic understanding of my vision for Untitled Mod Game. If you are unfamiliar, [have a quick skim](umgtech).)*
+*(This article requires a basic understanding of my vision for Untitled Mod Game. If you are unfamiliar, [have a quick skim](../umgtech).)*
 
 ---------------
 

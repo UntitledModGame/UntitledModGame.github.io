@@ -124,5 +124,14 @@ The clear, obvious downside of this approach is obfuscation.
 It makes stuff less clear and harder to maintain.
 
 
+# MOST IMPORTANT THING:
+PLEASE OLI!!!
+DON'T BE BIASED.
+"projected components" sounds all smart, and cool, and epic.
+But dont be biased by the coolness.
+
+Yes, it sounds cool.
+But is it TRULY practical? Be honest with yourself, please.
+
 
 

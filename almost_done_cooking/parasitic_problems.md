@@ -17,20 +17,27 @@ Problem-solving is generally hard.
 
 But I think what's harder, is actually problem-*discovery.*
 
-In my opinion, the hard part is not solving problems:<br/>
+In my opinion, the hardest part is not solving problems:<br/>
 It's *recognizing* the problems.<br/>
-And some kinds of problems are insanely hard to recognize, because we just accept them for what they are. 
+Some kinds of problems are insanely hard to recognize, because we just accept them for what they are. 
 
 As programmers, we are highly accustomed to working within the limits and constraints of our systems.<br/>
 And with this, I feel like it is very easy to mistake problems for constraints.
 
 These kind of problems, problems that are mistaken for systemic constraints, I like to call "Parasitic problems".<br/>
-Parasitic problems aren't really apparent at first glance, because our brain just accepts that they exist.<br/>
-But they still affect the product.<br/>If we don't find a solution to parasitic problems, they will sit there *FOREVER*, just beneath our code. Like a dark, invisible parasite, putting a dull tax on efficiency, and most of the time, we won't notice they exist because we mistake them for systemic constraints.
+Parasitic problems aren't really apparent at first glance, because our brain mistakes them for unchangable constraints of the system.<br/>
+These kind of problems can affect end products *dramatically*.<br/>If we don't recognize parasitic problems, they will sit there *FOREVER*, just beneath our code. Like a dark, invisible parasite, putting a dull tax on efficiency.
+And what's frustrating, is that most of the time, we won't notice they even exist, because we mistake them for systemic constraints!
 
 --------------
 
 # An example: Rust borrow checker
+
+TODO: Redo this!<br/>
+Rust borrow checker is a bad example of a solution to a parasitic problem.
+Do some more thinking of a better example.
+
+
 Rust's [borrow checker](https://doc.rust-lang.org/1.8.0/book/references-and-borrowing.html) is a decent example of a solution that is solving a parasitic problem.<br/>
 Before the borrow-checker idea existed, programming languages had a few options in managing memory:
 - Manually allocate and free
@@ -42,16 +49,7 @@ This is because I believe that the concept of memory-management in programming l
 
 
 
-----------------------
-
-# Basic problems in UMG:
-- Syncing is fragile (hacked client potential)
-    - Remove `client.send`, in favor of a well-defined packet approach
-    - Added `server.definePacket` and `client.definePacket`
-
-
-----------------------
-
+-------------------
 
 # Potential parasitic problems in UMG:
 
@@ -82,7 +80,7 @@ between components;
 ie.
 ```lua
 
-umg.project("gun", "usable", })
+umg.project("gun", "usable", true)
 --[[
     Projects component `gun` onto `usable`.
 
@@ -90,12 +88,6 @@ umg.project("gun", "usable", })
 
     if an entity has `gun`:
         Then it should also have `usable` component.
-    
-    TODO: think about what should be in {...}
-    We should be able to modify the projection nicely.
-
-    Perhaps a bunch of functions to determine how the projection works?
-    (If there is no 3rd arg, then the projection is by value)
 ]]
 
 ```
@@ -127,10 +119,11 @@ PROS:
 - use no memory
 - projected components are automatically updated on the fly
 - will affect groups, which is super cool and beautiful
+- Don't need to be sent over the network
 
 CONS:
 - Obfuscative / easy to abuse
-- Must recompute each time accessed; potentially costly?
+- A bit costly to recognize existance of projected components
 - `if ent.myComponent then` idiom is a bit more costly due to `__index`
 
 ------------------
@@ -172,7 +165,7 @@ But the only gain that we get from doing it at a ECS-level is a bit of memory sa
 
 As discussed in the previous commit, `umg.project` is not without performance penalties.
 
-I think it'd be cleaner if we allow for projection, but at a system-level instead.
+I think it'd be cleaner if we allow for projection, but we implement it at a system-level instead, through `regular` components.
 
 IDEA: Provide a `components` base mod that does this stuff for us:
 ```lua
@@ -186,12 +179,10 @@ components.project("image", "drawable", true)
 -- we can also project onto groups:
 local myGroup = group("foo", "bar")
 components.project(myGroup, "foobar", 42)
---[[
-    sets `ent.foobar = 42` to any entity with `foo` and `bar` components
-]]
+-- sets `ent.foobar = 42` to any entity with `foo` and `bar` components
 
 
-
+-- We could also allow functions to mutate the component value:
 components.project("maxHeath", "health", function(ent, maxHealth)
     -- entites with `maxHealth` component automatically are given
     -- `health` component
@@ -200,8 +191,7 @@ end)
 
 
 
-
--- We can also enforce constraints too:
+-- We could also enforce constraints too:
 components.enforce("tile", "tileType")
 --[[
     If an entity has `tile` component, but doesn't have

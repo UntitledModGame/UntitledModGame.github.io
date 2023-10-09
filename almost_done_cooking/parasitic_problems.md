@@ -76,7 +76,7 @@ Obviously, we could use question-buses; `umg.ask("isUsable", ent)`
 but I feel like there could be a better solution.
 
 
-## IDEA:
+# IDEA 1:
 Perhaps we should allow for "relations" or "projections"
 between components;
 ie.
@@ -135,9 +135,9 @@ CONS:
 
 ------------------
 
-# MOST IMPORTANT THING:
-PLEASE OLI!!!
-DON'T BE BIASED.
+## MOST IMPORTANT THING:
+PLEASE OLI!!!<br>
+DON'T BE BIASED.<br/>
 "projected components" sounds all smart, and cool, and epic.
 But dont be biased by the coolness.
 
@@ -151,8 +151,7 @@ Also, be wary of the sunk cost fallacy!!!
 I guess the easiest way to test for practicality is to list places
 where the component would be useful:
 
-# Practical uses for component projections:
-
+## Practical uses for component projections:
 - `usable` component
 - `effect` component (checks if something is an effect)
 - `action` component (checks if something is an action)
@@ -163,36 +162,60 @@ Would projections be useful outside of this problem space?<br/>
 If projections are solely used for checking booleans, then
 it's probably not worth having them.
 
-Think of more potential use-cases below VVVVV
 
 
 
 
+# IDEA 2:
+Component projections is a good idea.<br/>
+But the only gain that we get from doing it at a ECS-level is a bit of memory saved, and not needing to send components over the network.
+
+As discussed in the previous commit, `umg.project` is not without performance penalties.
+
+I think it'd be cleaner if we allow for projection, but at a system-level instead.
+
+IDEA: Provide a `components` base mod that does this stuff for us:
+```lua
+components.project("image", "drawable", true)
+--[[
+    internally, this creates an empty-group for `image`,
+    and sets `ent.drawable = true` in the `onAdded` callback.
+]]
+
+
+-- we can also project onto groups:
+local myGroup = group("foo", "bar")
+components.project(myGroup, "foobar", 42)
+--[[
+    sets `ent.foobar = 42` to any entity with `foo` and `bar` components
+]]
+
+
+
+components.project("maxHeath", "health", function(ent, maxHealth)
+    -- entites with `maxHealth` component automatically are given
+    -- `health` component
+    return maxHealth
+end)
 
 
 
 
+-- We can also enforce constraints too:
+components.enforce("tile", "tileType")
+--[[
+    If an entity has `tile` component, but doesn't have
+    `tileType` component,
+    then throw error.
+]]
+--[[
+    This is *kinda* a dumb way of doing things....
+    because if `tile` and `tileType` require each other, shouldn't
+    they just be the same component...?
+    Idk, do some more thinking about whether this API is needed.
+]]
+
+```
 
 
-# Technical implementation:
-
-We also need to make sure that component access stays O(1).
-
-OH, FUCK.<br/>
-I think that access of projection components is O(n) where
-`n` is the number of projections to the component.
-
-We could minimise this by keeping a bitmap of components,
-and use bitops to check for ownership.<br/>
-Do some thinking.
-
-This would work..<br/>
-but we would just have to limit the number of projections to the number
-of bits that we have in our bitmap.
-
-Alternatively, we could keep a LUT of current projections inside
-of the entity, and update the LUT whenever a projection
-is added/removed....?<br/>
-Downside of this, is that it takes a bit extra memory.<br/>
-not too bad tho.
 

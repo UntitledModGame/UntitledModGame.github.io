@@ -106,7 +106,7 @@ function calculateDamage(ent) {
     dmg = ent.baseDamage
     for shape in shapeList {
         if shape.contains(ent) {
-            shape.buff(ent)
+            dmg += shape.getBuff(ent, :damage)
         }
     }
     ... -- other calculations here

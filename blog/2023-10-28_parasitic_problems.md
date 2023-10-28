@@ -8,7 +8,9 @@ tags: [opinion]
 
 I feel like the best solutions are for problems that aren't known to exist.
 
-This was certainly the case for question buses.<br/>
+<!--truncate-->
+
+This was certainly the case for [question buses](../buses).<br/>
 Before the creation of question buses, there was no real "problem" with having to receive data;
 however, as soon as question-buses were created, the "problem" that question-buses were solving was blatantly obvious.
 
@@ -25,7 +27,7 @@ It's *recognizing* the problems.<br/>
 Some kinds of problems are insanely hard to recognize, because we just accept them for what they are. 
 
 As programmers, we are highly accustomed to working within the limits and constraints of our systems.<br/>
-And with this, I feel like it is very easy to mistake solvable-problems for unmoving constraints.
+And with this, I feel like it is very easy to mistake problems for unmoving constraints.
 
 These kind of problems, problems that are mistaken for systemic constraints, I like to call "Parasitic problems".<br/>
 Parasitic problems aren't really apparent at first glance, because our brain mistakes them for unchangable constraints of the system.<br/>
@@ -73,7 +75,7 @@ All you need to do, is invent the amazing *steam engine*.
 
 --------------
 
-![train_poster](images/train_poster)
+![train_poster](images/train_poster.jpg)
 
 --------------
 
@@ -104,10 +106,11 @@ Speaking from a purely software-centric perspective here:
 
 If you ever discover a systemic constraint that annoys you quite frequently, stop to question it. Is this really a constraint? Or is it a parasitic problem in disguise?
 
-A mock example: It's a bit annoying having to load all these images every time I use them! Can image-loading be changed from a constraint, to a problem?<br/>
+A mock example:<br/>
+It's a bit annoying having to load all these images every time I use them! Can image-loading be changed from a constraint, to a problem?<br/>
 Sure, here's a simple solution:
-> Load images automatically by walking the assets folder, keyed by file name.
-> Now we can reference a simple API, `getImage(filename)` or something, to obtain the image without needing to load it.
+> Walk the asset folder automatically, load the images
+> Create a `getImage(filename)` function that lazily allows image access
 
 # Solving parasitic-problems accidentally:
 
@@ -115,7 +118,7 @@ I think that toying around with random ideas is underrated. When I came up with 
 And as it turned out, question-buses have completely transformed the project.
 
 This was the same with the load-time entityType mutation API. (Ie. UMG's `@defineEntityType` callback; naming may be different.)
-With this, I wasn't actually looking to solve anything, I was just toying around with ideas. As soon as the API existed, the problems that it solved materialized into existance- from unseen-constraints, to a set of parasitic-problems.
+With this, I wasn't actually looking to solve anything, I was just toying around with ideas. As soon as the API existed, the problems that it solved materialized into existance- from unseen-constraints, to a set of parasitic-problems that could be solved easily with this new setup.
 
 -----
 

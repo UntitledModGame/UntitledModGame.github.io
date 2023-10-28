@@ -26,8 +26,8 @@ And with this, I feel like it is very easy to mistake problems for constraints.
 
 These kind of problems, problems that are mistaken for systemic constraints, I like to call "Parasitic problems".<br/>
 Parasitic problems aren't really apparent at first glance, because our brain mistakes them for unchangable constraints of the system.<br/>
-These kind of problems can affect end products *dramatically*.<br/>If we don't recognize parasitic problems, they will sit there *FOREVER*, just beneath our code. Like a dark, invisible parasite, putting a dull tax on efficiency.<br/>
-And what's frustrating, is that most of the time, we won't notice they even exist, because we mistake them for systemic constraints!
+These kind of problems can affect end products *dramatically*.<br/>If we don't recognize parasitic-problems, they will sit there *FOREVER*, just beneath our code. Like a dark, invisible parasite, putting a dull tax on efficiency.<br/>
+And what's frustrating, is that most of the time, we won't notice that these problems even exist, because we mistake them for systemic constraints!
 
 --------------
 
@@ -48,9 +48,9 @@ We could do a few things:
 
 Nice! Ok, these are all valid options.<br/>
 But you, (Your majesty,) are missing one crucial detail: You are looking at the *solutions*, not the *problem.*<br/>
-Rememember our original problem: Our armies can't respond to invasions in time!
+Rememember our original problem: "Our armies can't respond to invasions in time"
 
-And our primary constraint is that our horses can only travel 40 kilometers per day.
+And our primary constraint is that our horses can only travel 40 kilometers per day.<br/>
 Can we change this?
 
 Well of course we can!<br/>
@@ -63,26 +63,61 @@ Gets changed to:<br/>
 "Our armies are moving too slow"
 
 I'd like to clarify here. We are not "solving" a problem. We are RE-DEFINING the problem. With the initial problem, we *assumed* that horse-speeds were a constant constraint.<br/>
-We didn't even LOOK for solutions to move our armies faster, since we regarded it has a constraint. This is a great example of a parasitic problem.
+With our previous problem-statement, we didn't even LOOK for solutions to move our armies faster, since we regarded it as a constraint. This is a great example of a parasitic problem.
 
 For years, the problem of army-movement was locked to the speed of horses. But you, benevolent tyrant, you can change that!<br/>
 All you need to do, is invent the amazing *locomotive*.
 
+--------------
+
 ![train_poster](images/train_poster)
+
+--------------
 
 ## Hold up!
 
 Simply "inventing trains" is no easy feat.<br/>
-First off, how do we know that creating trains are even possible? It's easy to say "invent X, invent Y" in [hindsight](https://en.wikipedia.org/wiki/Egg_of_Columbus), since the brilliant discovery has already been done.
+First off, how do we know that locomotives are even possible? It's easy to say "invent X, invent Y" in [hindsight](https://en.wikipedia.org/wiki/Egg_of_Columbus), since the brilliant discovery has already been done.
 
-That's the awkward thing about parasitic problems, is that often, you'll be groping around blindly.<br/>
-If the problem had instead been: "How do we make our horses 10x stronger?" then I'm sure that nothing would have been accomplished, since there is no easy way to do that kind of thing.<br/>
-We know in modern-day, that the strength of horses is a hard constraint. There is no magic you can do to make them 10x bigger.<br/>
-But back then, medieval empires wouldn't have known this. It's likely that a lot of time was wasted trying to solve this.
+That's the awkward thing about parasitic problems, is that often, you'll be stumbling around blindly.<br/>
+If the problem-statement had instead been changed to: "How do we find horses that are 100x stronger?" then I'm sure that nothing would have been accomplished; since (biologically) there is so such thing.<br/>
+But back then, medieval empires wouldn't have known this. It's likely that a lot of time was wasted trying to solve this "problem".
 
-Quite frankly, this is the trouble with "solving" parasitic
+-------------
+
+![big_moose](images/giant_moose_army.png)
+
+------------
+
+Quite frankly, this is the trouble with "solving" parasitic-problems.<br/>
+Remember that a parasitic-problem is just a constraint *redefined* as a problem. We haven't actually solved anything; and we don't know if a solution is possible.<br/>
+It's entirely possible that the problem is actually a hard constraint.
 
 -------------------
+
+# How do we recognize parasitic-problems?
+
+Speaking from a purely software-centric perspective here:
+
+If you ever discover a systemic constraint that annoys you quite frequently, stop to question it. Is this really a constraint? Or is it a parasitic problem in disguise?
+
+A mock example: It's a bit annoying having to load all these images every time I use them! Can image-loading be changed from a constraint, to a problem?<br/>
+Sure, here's a simple solution:
+> Load images automatically by walking the assets folder, keyed by file name.
+> Now we can reference a simple API, `getImage(filename)` or something, to obtain the image without needing to load it.
+
+# Solving parasitic-problems accidentally:
+
+I think that toying around with random ideas is underrated. When I came up with the idea for question-buses, I wasn't attempting to "solve" any problem, I was just curious as to what event-buses would look like if the data flow was reversed.<br/>
+And as it turned out, question-buses have completely transformed the project.
+
+This was the same with the load-time entityType mutation API. (Ie. UMG's `@defineEntityType` callback; naming may be changed.)
+With this, I wasn't actually looking to solve anything, I was just toying around with ideas. As soon as the API existed, the problems that it solved materialized into existance- from a constraint, to a parasitic-problem.
+
+
+# Thanks for reading :D
+
+
 
 # Potential parasitic problems in UMG:
 
@@ -181,7 +216,7 @@ But the only gain that we get from doing it at a ECS-level is a bit of memory sa
 
 As discussed in the previous commit, `umg.project` is not without performance penalties.
 
-I think it'd be cleaner if we allow for projection, but we implement it at a system-level instead, through `regular` components.
+I think it'd be cleaner if we allow for projection, but we implement it at a system-level instead, through regular components.
 
 IDEA: Provide a `components` base mod that does this stuff for us:
 ```lua
@@ -193,7 +228,7 @@ components.project("image", "drawable", true)
 
 
 -- we can also project onto groups:
-local myGroup = group("foo", "bar")
+local myGroup = umg.group("foo", "bar")
 components.project(myGroup, "foobar", 42)
 -- sets `ent.foobar = 42` to any entity with `foo` and `bar` components
 
@@ -210,11 +245,15 @@ end)
 components.enforce("x", function(ent, val)
     assert(type(val) == "number", "x component must be a number")
 end)
---[[
-    Stuff like this would work great.
-]]
+
+-- etc etc.
 
 ```
 
+Cool, I like this idea.
+
+It's not an amazing breakthrough, but it will definitely make things slightly better within the ecosystem.
+
+All in all, this (probably) took about 5 hours of planning, over multiple days. Worth it in the end though!
 
 

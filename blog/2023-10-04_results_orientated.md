@@ -70,8 +70,8 @@ However, lets stop to ponder.
 
 The genius cavemen who created chess... did they develop chess with forks in mind? 
 
-- **Caveman Bob:** "Hey Caveman Fred, ooga booga. You know what I want? I want a game where there are [PINS](https://en.wikipedia.org/wiki/Pin_(chess)), and [FORKS!](https://en.wikipedia.org/wiki/Fork_(chess))"
-- **Caveman Fred:** "Ooga booga, that sounds like a GREAT idea!"
+- **Caveman Bob:** "Hey Caveman Fred. You know what I want? I want a game where there are [PINS](https://en.wikipedia.org/wiki/Pin_(chess)), and [FORKS!](https://en.wikipedia.org/wiki/Fork_(chess))"
+- **Caveman Fred:** "That sounds like a GREAT idea!"
 
 So I can guarantee that this never happened.<br/>
 Why? Well, because forks and pins *don't exist outside of chess.*<br/>
@@ -81,7 +81,7 @@ If we try to create truly interesting/emergent gameplay from a results-orientate
 
 Consider:
 - **Caveman Bob:** "How about we make a game where positional strategy is really important?"
-- **Caveman Fred:** "Ooga booga! OK!"
+- **Caveman Fred:** "OK!"
 - **Caveman Bob:** "Hmm. We need a system where pieces can link up and connect with each other."
 - **Caveman Fred:** "What if pieces can capture other pieces? That way, by positioning your pieces, you can protect them."
 

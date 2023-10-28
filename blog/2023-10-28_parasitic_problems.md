@@ -85,7 +85,7 @@ Simply "inventing trains" is no easy feat.<br/>
 First off, how do we know that locomotives are even possible? It's easy to say "invent X, invent Y" in [hindsight](https://en.wikipedia.org/wiki/Egg_of_Columbus), since the brilliant discovery has already been done.
 
 And, before we go further; I'd like to point out the invention of trains is probably *not the best* example. Going from horses to locomotives is an insanely giant step; comparable to going from cars to the moon.<br/>
-However, I feel like this example still illustrates my point. It's difficult to come up with understandable examples for; and horses to locomotives is a problem space that is easy to understand.
+However, I feel like this example still illustrates my point. It's difficult to come up with understandable examples for this kind of thing. In reality, these "leaps" are obviously going to be much, much smaller.
 
 In any case, the awkward thing about parasitic problems, is that often, you'll be stumbling around blindly.<br/>
 If the problem-statement had instead been changed to: "How do we find horses that are 100x stronger?" then I'm sure that nothing would have been accomplished; since (biologically) there is so such thing.<br/>

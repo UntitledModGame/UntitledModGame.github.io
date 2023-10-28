@@ -12,11 +12,11 @@ This article will explain my reasoning, and is a successor to [my other article 
 
 <!-- truncate -->
 
-### UH OH: HOT TAKES INCOMING!
+This article will discuss the difference between 2 development methods:
+- "Results orientated development"
+- and "Systems orientated development"
 
-In this article, I discuss the difference between "results orientated" development, and "systems orientated" development.
 
-Ok. So what do I mean when I say "results orientated"?<br/>
 When I say a development cycle is "results orientated", I mean that the developers start with the player interactions/gameplay in mind, and develop the product from there.
 
 ------------------
@@ -97,11 +97,9 @@ But I truly believe that developing systems, and having [systematic emergence](.
 
 ---------------
 
-Good systems create gameplay.<br/>
-But good gameplay cannot create systems.
+Good gameplay cannot create systems, but good systems can create gameplay.<br/>
+In my opinion, that sums up why I think it's good to approach gamedev from a systems-orientated perspective.
 
-Thanks for reading this opinion piece! :)
-- Oli
-
+Thank you for reading! :)
 
 

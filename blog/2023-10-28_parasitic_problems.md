@@ -84,9 +84,12 @@ All you need to do, is invent the amazing *steam engine*.
 Simply "inventing trains" is no easy feat.<br/>
 First off, how do we know that locomotives are even possible? It's easy to say "invent X, invent Y" in [hindsight](https://en.wikipedia.org/wiki/Egg_of_Columbus), since the brilliant discovery has already been done.
 
-That's the awkward thing about parasitic problems, is that often, you'll be stumbling around blindly.<br/>
+And, before we go further; I'd like to point out the invention of trains is probably *not the best* example. Going from horses to locomotives is an insanely giant step; comparable to going from cars to the moon.<br/>
+However, I feel like this example still illustrates my point. It's difficult to come up with understandable examples for; and horses to locomotives is a problem space that is easy to understand.
+
+In any case, the awkward thing about parasitic problems, is that often, you'll be stumbling around blindly.<br/>
 If the problem-statement had instead been changed to: "How do we find horses that are 100x stronger?" then I'm sure that nothing would have been accomplished; since (biologically) there is so such thing.<br/>
-But back then, medieval empires wouldn't have known this. It's likely that a lot of time was wasted trying to solve this "problem".
+But back then, medieval empires wouldn't have known this. It's likely that a lot of time was wasted trying to solve the "problem" of finding/creating giant horses!
 
 -------------
 
@@ -100,24 +103,12 @@ It's entirely possible that the problem is actually a hard constraint.
 
 -------------------
 
-# How do we recognize parasitic-problems?
-
-Speaking from a purely software-centric perspective here:
-
-If you ever discover a systemic constraint that annoys you quite frequently, stop to question it. Is this really a constraint? Or is it a parasitic problem in disguise?
-
-A mock example:<br/>
-It's a bit annoying having to load all these images every time I use them! Can image-loading be changed from a constraint, to a problem?<br/>
-Sure, here's a simple solution:
-> Walk the asset folder automatically, load the images
-> Create a `getImage(filename)` function that lazily allows image access
-
 # Solving parasitic-problems accidentally:
 
-I think that toying around with random ideas is underrated. When I came up with the idea for question-buses, I wasn't attempting to "solve" any problem, I was just curious as to what event-buses would look like if the data flow was reversed.<br/>
+I also think that toying around with random ideas is underrated. When I came up with the idea for question-buses, I wasn't attempting to "solve" any problem, I was just curious as to what event-buses would look like if the data flow was reversed.<br/>
 And as it turned out, question-buses have completely transformed the project.
 
-This was the same with the load-time entityType mutation API. (Ie. UMG's `@defineEntityType` callback; naming may be different.)
+This was the same with the load-time entityType mutation API. (Ie. UMG's `@newEntityType` callback; naming may be different.)
 With this, I wasn't actually looking to solve anything, I was just toying around with ideas. As soon as the API existed, the problems that it solved materialized into existance- from unseen-constraints, to a set of parasitic-problems that could be solved easily with this new setup.
 
 -----

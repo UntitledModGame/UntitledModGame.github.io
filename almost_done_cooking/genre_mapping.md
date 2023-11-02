@@ -42,6 +42,7 @@ Here are some other direct examples from games:
 - Call of duty: `control = single-entity`
 - Chess: `control = multi-entity`
 - The powder toy: `control = world-interactive`
+- Stellaris: `control = multi-entity / world-interactive`
 
 Cool!<br/>
 Now you understand how I'm trying to categorize stuff here.<br/>
@@ -95,8 +96,8 @@ For One-way progression, note that it doesn't neccessarily have to relate to the
 Take for example, the tool-system in minecraft. Minecraft has a very linear tool-system: once you have diamond tools, there is never any reason to go back to stone tools. As such, Minecraft's tool progression is One-way.
 
 That being said, in a broad sense, I would say that Minecraft's main progression system is Abstract.<br/>
-Players can set their own goals, and achieve what they want! And hopefully you understand the table now:<br/>
-The main upside is that the gameplay potential is *limitless.* The players set the goals, the *players define the progression.* However, the main downside is that the developer has no control over what the players do. This can lead to missed gameplay opportunities, or wasted time on the developer's behalf.
+Players can set their own goals, and achieve what they want!<br/>
+And hopefully the upsides/downsides make sense now. The main upside is that the gameplay potential is *limitless.* The players set the goals, the *players define the progression.* However, the main downside is that the developer has no control over what the players do. This can lead to missed gameplay opportunities, or wasted time on the developer's behalf.
 
 Anyway, I feel like I've been rambling a bit here.<br/>
 You get the idea. Lets move on to our next variable :)
@@ -108,7 +109,7 @@ You get the idea. Lets move on to our next variable :)
 This one is pretty basic.<br/>
 It's basically the amount of critical thinking required to progress in the game.
 
-- Pac-man: low cognitive load.
+- Fruit-ninja: low cognitive load.
 - Baba-is-you: high cognitive load.
 
 The `Cognitive load` of a game often lies inversely proportional to it's pace.
@@ -142,18 +143,35 @@ No-interaction (single player game)
 No-interaction is just for single-player games.
 
 Cooperative and PvP are self-explanatory;<br/>
-Many games have both. For example, CS:GO has BOTH cooperative AND PvP, since there are 2 teams of 5 players.
+Many games have both. For example, CS:GO has BOTH cooperative AND PvP, since there are 2 opposing teams of 5 players.
 
 But `Political` is where it gets interesting!<br/>
 "Political" is when the relationships between the players are dependent on their own feelings, desires, or goals.
 
-For example, in Among-Us, crewmates do not know who they are teamed up with, so different crewmates may end up trusting / working against other players depending on their feelings.
+For example, in Among-Us, crewmates do not know who they are teamed up with, so different crewmates may end up trusting / working against other players depending on their feelings; (even though their actual roles are pre-determined)
 
 A better example would a Rust server: players are generally expected to work in teams; however, players may switch allegiance at any time. There may be spies, and arbitrary alliances may be formed/broken between any players at any time.
 
 ---
 
 
+## Narrative score:
+
+The Narrative score is how much emotion the game attempts to convey through story.
+
+For example,<br/>
+Undertale would get a 10/10,<br/>
+Chess would get a 0/10.
+
+Generally, the higher the narrative score, the less emergent/abstract the game (and it's progression) can be.<br/>
+This is because with emergence, (and with abstract-progression) we lose control as a developer.
+
+To tell a compelling story, we need a lot of control.<br/>
+Unfortunetely... we forfeit a lot of our control as soon as we attempt to add better systems.
+
+This is why I advocate for (most) indie developers to forfeit story-based content, and instead focus on creating good systems.
+
+----
 
 
 

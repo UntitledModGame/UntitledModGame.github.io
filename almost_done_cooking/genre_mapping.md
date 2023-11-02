@@ -17,6 +17,8 @@ To attempt to map out videogame genres, we should try discovering/creating a set
 The simplest of these variables, is the `control` variable.<br/>
 This variable dictates how the player's actions can affect the game:
 
+## Control:
+
 - First-person shooter: `control = single-entity`
 - RTS: `control = multi-entity`
 - City-builder: `control = world-interactive`
@@ -50,51 +52,109 @@ Lets go on to define our next thing: `progression`.
 ## Progression:
 "Progression" defines how a player progresses through the game.
 
-However, I don't think we can simply define progression as one variable.<br/>
-There can be many different types of "progression" within videogames...<br/>
-progression within levels, within the player character, or even meta-progression that trancends across the whole game.
+There are a few types of progression:
 
-We could use multiple variables instead:
+- One-way progression:
+    - Progression goes one-way. 
+    - Eg: You finish the level. You unlock a new character.
+- Ephemeral progression:
+    - Progression is temporary, and/or you can go backwards.
+    - Eg. You die in a roguelike
+- Abstract progression:
+    - Progression is not well-defined, or is defined by the player
+    - Eg. building a house in minecraft.
 
+
+I believe that these 3 progression types, (when combined,) can be used to define the progression system in ALL games.
+
+Each progression type has it's upsides and downsides.<br/>
+I'll list my opinion below:
+
+---
+
+
+|  Progression Type: | Main Upside      | Main Downside |
+| ------------------ | ------------- | -------- |
+| One-way      | High developer control  | Needs more content |
+| Ephemeral   | Allows for fast progression speed | Gameplay can get stale |
+| Abstract   | Excellent gameplay potential | Low developer control |
+
+---
+
+Hopefully all of these make sense.
+
+
+Note that many games can have multiple progression-types baked in.
+For example- Bloons-TD-6 has Ephemeral progression in levels, (since you restart at the end of a run), but ALSO has One-way progression, since you can buy permanent upgrades for your towers.
+
+Note that in Bloons-TD-6, you can obtain all of the best possible towers in the entire game in less than an hour.<br/>
+This is due to it's Ephemeral nature; the towers are reset at the end of the run, so the game can afford to give you many upgrades in a short amount of time, since they will be reset.<br/>
+As listed, this is the main upside of Ephemeral progression.
+
+For One-way progression, note that it doesn't neccessarily have to relate to the overarching game in itself.<br/>
+Take for example, the tool-system in minecraft. Minecraft has a very linear tool-system: once you have diamond tools, there is never any reason to go back to stone tools. As such, Minecraft's tool progression is One-way.
+
+That being said, in a broad sense, I would say that Minecraft's main progression system is Abstract.<br/>
+Players can set their own goals, and achieve what they want! And hopefully you understand the table now:<br/>
+The main upside is that the gameplay potential is *limitless.* The players set the goals, the *players define the progression.* However, the main downside is that the developer has no control over what the players do. This can lead to missed gameplay opportunities, or wasted time on the developer's behalf.
+
+Anyway, I feel like I've been rambling a bit here.<br/>
+You get the idea. Lets move on to our next variable :)
+
+---
+
+## Cognitive-load:
+
+This one is pretty basic.<br/>
+It's basically the amount of critical thinking required to progress in the game.
+
+- Pac-man: low cognitive load.
+- Baba-is-you: high cognitive load.
+
+The `Cognitive load` of a game often lies inversely proportional to it's pace.
+
+For example, in an FPS game, the objective is simple:<br/>
+Shoot the opponent. <br/>
+FPSes are fast-paced and full of action, no time to think.
+
+Whereas a puzzle game is slow paced, and requires a high cognitive load.
+
+Note that some games can have both.<br/>
+For example, in Risk of rain 2, there is low-cognitive-load when fighting, but high-cognitive-load when choosing your build.
+
+
+----
+
+## Sociality:
+
+This one is basic too.<br/>
+It's basically asking: "How do we interact with other players?"
+
+There are a few types of "Sociality":
 ```
-Progression ephemerality: 
-    How often (or how harshly) is progression reset across a game session?
-    0 = never reset,  10 = fully reset
+Cooperative 
+PvP
+Political
 
-Progression importance:
-    How important is progression to the gameplay?
-    0 = not important,  10 = very important
-
-Progression autonomy:
-    How much autonomy does the player have in progressing?
-    0 = no autonomy,  10 = full autonomy
+No-interaction (single player game)
 ```
 
-Ok! Awesome.<br/>
-As you can see, we have rated all of these variables on a scale from 0-10.
+No-interaction is just for single-player games.
 
-Lets map out some games:
+Cooperative and PvP are self-explanatory;<br/>
+Many games have both. For example, CS:GO has BOTH cooperative AND PvP, since there are 2 teams of 5 players.
 
-```
-BINDING OF ISAAC:
-P-ephemerality: 9 (Items and stats reset across runs)
-P-importance: 8 (A core part of the )
-P-autonomy: 5 (Items and pickups are pre-determined per the seed)
-```
+But `Political` is where it gets interesting!<br/>
+"Political" is when the relationships between the players are dependent on their own feelings, desires, or goals.
 
-```
-MINECRAFT:
-P-ephemerality: 0 (worlds are persistent)
-P-importance: 2 (the player can be a lazy bumb, and it won't affect gameplay)
-P-autonomy: 10 (the player sets their own goals and chooses how to progress)
-```
+For example, in Among-Us, crewmates do not know who they are teamed up with, so different crewmates may end up trusting / working against other players depending on their feelings.
 
-```
-CHESS:
-P-ephemerality: 10 (Reset fully after runs)
-P-importance: 10 ()
-P-autonomy: 5 (50% of progression determined by each player)
-```
+A better example would a Rust server: players are generally expected to work in teams; however, players may switch allegiance at any time. There may be spies, and arbitrary alliances may be formed/broken between any players at any time.
 
-##
+---
+
+
+
+
+
 

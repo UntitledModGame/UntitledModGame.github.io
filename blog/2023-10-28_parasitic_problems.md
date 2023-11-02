@@ -60,7 +60,6 @@ Can we change this?
 
 Well of course we can!<br/>
 In modern-day, armies travel by air, by train, and by truck.<br/>
-Would it be too unrealistic to assume that a medieval empire could have invented trains for military purposes? (No, it's not unrealistic, [because it *actually occured.*](https://en.wikipedia.org/wiki/History_of_rail_transport))
 
 With this, we have re-defined our problem:<br/>
 > "Our armies can't respond to invasions in time"<br/>
@@ -71,7 +70,7 @@ I'd like to clarify here. We are not "solving" a problem. We are RE-DEFINING the
 With our previous problem-statement, we didn't even LOOK for solutions to move our armies faster, since we regarded it as a constraint. This is a great example of a parasitic problem.
 
 For years, the problem of army-movement was locked to the speed of horses. But you, benevolent King, you can change that!<br/>
-All you need to do, is invent the amazing *steam engine*.
+All you need to do, is invent the amazing *steam engine*, and the *locomotive.*
 
 --------------
 
@@ -84,8 +83,9 @@ All you need to do, is invent the amazing *steam engine*.
 Simply "inventing trains" is no easy feat.<br/>
 First off, how do we know that locomotives are even possible? It's easy to say "invent X, invent Y" in [hindsight](https://en.wikipedia.org/wiki/Egg_of_Columbus), since the brilliant discovery has already been done.
 
-And, before we go further; I'd like to point out the invention of trains is probably *not the best* example. Going from horses to locomotives is an insanely giant step; comparable to going from cars to the moon.<br/>
-However, I feel like this example still illustrates my point. It's difficult to come up with understandable examples for this kind of thing. In reality, these "leaps" are obviously going to be much, much smaller.
+(And, before we go further; I'd like to point out the invention of trains is a pretty bad example to use for this.<br/>
+When you and I go to solve problems in our software, we will generally solve small problems, with small scopes. Going from horses to locomotives is NOT a solution with a small scope.
+I just wanted to point out- the main reason I used this example is because it's very easy to understand.)
 
 In any case, the awkward thing about parasitic problems, is that often, you'll be stumbling around blindly.<br/>
 If the problem-statement had instead been changed to: "How do we find horses that are 100x stronger?" then I'm sure that nothing would have been accomplished; since (biologically) there is so such thing.<br/>

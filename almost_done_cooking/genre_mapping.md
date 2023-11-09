@@ -63,7 +63,7 @@ There are a few types of progression:
     - Eg. You die in a roguelike
 - Abstract progression:
     - Progression is not well-defined, or is defined by the player
-    - Eg. building a house in minecraft.
+    - Eg. building a base in minecraft.
 
 
 I believe that these 3 progression types, (when combined,) can be used to define the progression system in ALL games.
@@ -135,7 +135,7 @@ There are a few types of "Sociality":
 ```
 Cooperative 
 PvP
-Political
+Dynamic
 
 No-interaction (single player game)
 ```
@@ -145,8 +145,8 @@ No-interaction is just for single-player games.
 Cooperative and PvP are self-explanatory;<br/>
 Many games have both. For example, CS:GO has BOTH cooperative AND PvP, since there are 2 opposing teams of 5 players.
 
-But `Political` is where it gets interesting!<br/>
-"Political" is when the relationships between the players are dependent on their own feelings, desires, or goals.
+But `Dynamic` is where it gets interesting!<br/>
+"Dynamic" is when the relationships between the players are dependent on their own feelings, desires, or goals.
 
 For example, in Among-Us, crewmates do not know who they are teamed up with, so different crewmates may end up trusting / working against other players depending on their feelings; (even though their actual roles are pre-determined)
 
@@ -160,14 +160,14 @@ A better example would a Rust server: players are generally expected to work in 
 The Narrative score is how much emotion the game attempts to convey through story.
 
 For example,<br/>
-Undertale would get a 10/10,<br/>
-Chess would get a 0/10.
+- Undertale: 10/10 narrative<br/>
+- Chess: 0/10 narrative
 
 Generally, the higher the narrative score, the less emergent/abstract the game (and it's progression) can be.<br/>
 This is because with emergence, (and with abstract-progression) we lose control as a developer.
 
 To tell a compelling story, we need a lot of control.<br/>
-Unfortunetely... we forfeit a lot of our control as soon as we attempt to add better systems.
+Unfortunetely... we forfeit a lot of our control as soon as we attempt to add emergent systems.
 
 This is why I advocate for (most) indie developers to forfeit story-based content, and instead focus on creating good systems.
 

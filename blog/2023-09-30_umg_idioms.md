@@ -10,6 +10,7 @@ A list of idioms for the UMG ecosystem.
 <!--truncate-->
 
 -----------------
+<br/>
 
 # Checking if an entity has a component:
 ```lua
@@ -17,9 +18,11 @@ if ent.foo then
     print("entity has component foo!")
 end
 ```
-This is the same as `ent:hasComponent("foo")`
+This is (roughly) the same as `ent:hasComponent("foo")`.<br/>
+(This works because lua tables give nil when a key is missing)
 
 ------------------
+<br/>
 
 # Base-mod files:
 These files aren't compulsory, but it is common practice to put them in base mods:
@@ -30,6 +33,7 @@ These files aren't compulsory, but it is common practice to put them in base mod
 
 
 ------------------
+<br/>
 
 # Runtime client/server checks:
 Often, we will have code that is running on BOTH client-side AND server-side.<br/>
@@ -51,6 +55,7 @@ end
 You get the idea! :)
 
 ------------------
+<br/>
 
 # Classes:
 Lua doesn't have classes, neither does the UMG engine.<br/>
@@ -77,6 +82,7 @@ will automatically register `MyClass` with `umg.register`.
 Else, you'll run into big bad issues.)
 
 ----------------
+<br/>
 
 
 # Component-wise bus response:
@@ -107,6 +113,7 @@ end)
 ```
 
 ------------------
+<br/>
 
 # Entity inheritance:
 Sometimes, we may want to define an entity "base class", and extend it for a bunch of similar entity-types.
@@ -138,6 +145,7 @@ You get the idea :)
 
 
 ------------------
+<br/>
 
 # Functions in components:
 You may be horrified to realize that in UMG, doing this on serverside will cause a runtime error:
@@ -161,6 +169,7 @@ return {
 
 
 -----------------
+<br/>
 
 # Typecheck naming convention:
 When using `typecheck` mod, it's common to end the typecheck function with `Tc`.<br/>
@@ -171,8 +180,9 @@ local addTc = typecheck.assert("number", "number")
 (The `Tc` stands for "type check")
 
 -----------------------
+<br/>
 
-# Method-Event in base mods:
+# Method-Event pattern in base mods:
 When an event happens concerning an entity, it's common to do something like this:
 ```lua
 -- ent dies!
@@ -188,4 +198,79 @@ This is quite flexible, since it allows for other systems to tag onto the death 
 
 Examples of this: `mortality:entityDeath`, `rendering:drawEntity`
 
+
+------
+<br/>
+
+
+# Component-projection  +  Flag components:
+In UMG, "component projection" is a concept when one component causes
+another component to exist, or "creates" another component.
+
+The `components` base mod provides a bunch of tools for this:
+```lua
+components.project("X", "Y")
+-- Component X "projects" onto component Y.
+
+-- (Any entities that with component `X` are given component `Y`)
+```
+This is most common for "flag" components; ie. components that don't do anything on their own, but cause the entity to be accepted by certain systems.<br/>
+Example:
+```lua
+
+components.project("clickToBuy", "clickable")
+-- any entity with `clickToBuy` will be given the `clickable` component
+
+umg.on("control:entityClicked", function(ent)
+    --[[
+    The only reason this event is emitted, is because ent has the
+    `clickable` component, and is being handled by the `clickable` system!
+
+    We don't need to worry about how the clickable system works;
+    we just need to listen to this callback.
+    ]]
+    if ent.clickToBuy then
+        shop.tryBuy(ent)
+    end
+end)
+```
+The same thing is used for `drawable` and `usable`.
+
+
+
+-----
+<br/>
+
+# Component referencing:
+Sometimes, we want a component to have behaviour that depends on other (arbitrary) components.
+
+For example, Health-Bars should depend on both `maxHealth` and `health` components.
+
+Using component-referencing, we could implement Health-Bars using a more generic component: Progress-Bars!
+```lua
+-- We create a healthBar,
+-- USING the progressBar component:
+ent.progressBar = {
+    value = "health", -- value of the progressBar
+    maxValue = "maxHealth", -- max-value of the progressBar
+
+    color = RED
+}
+```
+Here, the system that manages the `progressBar` component will notice that we want the *value* of the progressBar to be determined by `ent.maxHealth` and `ent.health`.
+
+This is *really* beautiful, since we can reuse progressBars to represent other stuff.<br/>
+For example, a timer:
+```lua
+-- A timer! :)
+ent.progressBar = {
+    value = "timeRemaining",
+    maxValue = "totalTime"
+}
+-- Using `ent.totalTime` and `ent.timeRemaining` components.
+```
+
+
+----
+<br/>
 

@@ -136,4 +136,10 @@ It's not an amazing breakthrough, but it will definitely make things slightly be
 
 All in all, this (probably) took about 5 hours of planning, over multiple days. Worth it in the end though!
 
+--- 
+
+## FUTURE OLI HERE:
+This was **DEFINITELY** a breakthrough.<br/>
+usable, holdable, drawable, controllable; 
+all of these systems were reformed because of this new paradigm.
 

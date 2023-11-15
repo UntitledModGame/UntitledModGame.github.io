@@ -1,31 +1,21 @@
 ---
-slug: parasitic_problems
-title: Parasitic problems
+slug: problem_discovery
+title: Problem discovery
 tags: [opinion]
 ---
 
-# Parasitic problems
+# Problem discovery
 
-I feel like the best solutions are for problems that aren't known to exist.
+Problem solving is hard! But what I think is harder, is actually *problem discovery.*<br/>
+This article will be a bunch of rambling about how I like to approach creativity in an engineering context.
 
 <!--truncate-->
 
-This was certainly the case for [question buses](../buses).<br/>
-Before the creation of question buses, there was no real "problem" with having to receive data;
-however, as soon as question-buses were created, the "problem" that question-buses were solving was blatantly obvious.
-
-Today, if you asked me to create a UMG-like ecosystem *without* question-buses, I would notice their absence ALL the time.
-
------------------
-
-Problem-solving is generally hard!
-
-But I think what's harder, is actually problem-*discovery.*
-
-In my opinion, the hardest part is not solving problems:<br/>
-It's *recognizing* the problems.<br/>
+In my opinion, the hard part is not solving problems:<br/>
+The hard part is *recognizing* the problems.<br/>
 Some kinds of problems are insanely hard to recognize, because we just accept them for what they are. 
 
+This is especially apparent for programmers.<br/>
 As programmers, we are highly accustomed to working within the limits and constraints of our systems.<br/>
 And with this, I feel like it is very easy to mistake problems for unmoving constraints.
 
@@ -105,7 +95,7 @@ It's entirely possible that the problem is actually a hard constraint.
 
 # Solving parasitic-problems accidentally:
 
-I also think that toying around with random ideas is underrated. When I came up with the idea for question-buses, I wasn't attempting to "solve" any problem, I was just curious as to what event-buses would look like if the data flow was reversed.<br/>
+I also think that toying around with random ideas is underrated. When I came up with the idea for [question buses](../buses), I wasn't attempting to "solve" any problem, I was just curious as to what event-buses would look like if the data flow was reversed.<br/>
 And as it turned out, question-buses have completely transformed the project.
 
 This was the same with the load-time entityType mutation API. (Ie. UMG's `@newEntityType` callback; naming may be different.)

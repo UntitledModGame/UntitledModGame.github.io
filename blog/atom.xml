@@ -2,27 +2,11 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://your-docusaurus-test-site.com/blog</id>
     <title>Untitled Mod Game Blog</title>
-    <updated>2023-11-15T00:00:00.000Z</updated>
+    <updated>2023-10-28T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://your-docusaurus-test-site.com/blog"/>
     <subtitle>Untitled Mod Game Blog</subtitle>
     <icon>https://your-docusaurus-test-site.com/img/logo.png</icon>
-    <entry>
-        <title type="html"><![CDATA[OOP vs The Noobs]]></title>
-        <id>https://your-docusaurus-test-site.com/blog/OOP_vs_the_noobs</id>
-        <link href="https://your-docusaurus-test-site.com/blog/OOP_vs_the_noobs"/>
-        <updated>2023-11-15T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[So many newbie game developers who come to Love2d like to shit on OOP.]]></summary>
-        <content type="html"><![CDATA[<p>So many newbie game developers who come to <a href="https://love2d.org" target="_blank" rel="noopener noreferrer">Love2d</a> like to shit on OOP.<br>
-Including myself. (Yes, I was a big noob who thought I knew better)<br></p><p>In the past, I used to be completely allergic to OOP,
-but I feel like I have learned a lot more over the years, and I have mellowed out a bit.</p><p>This is my current philosophy as to where OOP is useful.</p><p>(Note, this is not to be taken too seriously)</p><h2 class="anchor anchorWithStickyNavbar_LWe7" id="behold-should_i_use_oopjpeg">Behold: <code>SHOULD_I_USE_OOP.jpeg</code><a href="#behold-should_i_use_oopjpeg" class="hash-link" aria-label="Direct link to behold-should_i_use_oopjpeg" title="Direct link to behold-should_i_use_oopjpeg">​</a></h2><hr><br><br><p>Obviously this is (mostly) a joke.</p><p>For the OOP haters out there, Yes, I agree; OOP can (and will) often lead to terrible code.<br>
-But this isn't a problem with OOP.</p><p>Also note that OOP does not mean inheritance! This is something that I misunderstood for a loooong time.<br>
-You can have an excellent OO system without any inheritance; and in general, I think that inheritance is something that can be heavily abused.</p><p>Regardless, <a href="https://en.wikipedia.org/wiki/SOLID" target="_blank" rel="noopener noreferrer">the SOLID principles</a> are pretty great to follow.<br>
-The most important one (in my opinion) is the SRP. The SRP can be applied to procedural programming too; not only OOP. All the others only really make sense in an OO context, however.</p>]]></content>
-        <category label="opinion" term="opinion"/>
-        <category label="programming" term="programming"/>
-        <category label="design" term="design"/>
-    </entry>
     <entry>
         <title type="html"><![CDATA[Problem discovery]]></title>
         <id>https://your-docusaurus-test-site.com/blog/problem_discovery</id>

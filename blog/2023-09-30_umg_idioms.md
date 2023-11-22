@@ -269,6 +269,26 @@ ent.progressBar = {
 }
 -- Using `ent.totalTime` and `ent.timeRemaining` components.
 ```
+We could then combine this with component projection to make a proper `healthBar` component:
+```lua
+components.project("healthBar", "progressBar", function(ent)
+    --[[
+        healthBar component projects ONTO progressBar component
+        (healthBar --> progressBar)
+    ]]
+    local hBar = ent.healthBar
+
+    local progressBar = {
+        value = "health",
+        maxValue = "maxHealth",
+        color = RED,
+        width = hBar.width,
+        height = hBar.height
+    }
+    return progressBar
+end)
+```
+Awesome, right??? :D
 
 
 ----

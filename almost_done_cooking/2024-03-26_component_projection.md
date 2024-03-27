@@ -10,9 +10,9 @@ What is component-projection in Untitled Mod Game?
 
 "Component-projection" is a special feature that I use for my ECS in UMG.
 
-It's extremely similar to inheritance in OOP; except, it occurs on components, as opposed to objects.
+It's (kinda?) similar to inheritance in OOP; except, it occurs on components, as opposed to objects.
 
-At it's most basic level, component-projection is when one component forces another component to exist.
+At it's most basic level, component-projection is when one component forces another component to exist, by creating the target component automatically.
 
 Example:  
 Lets say we have a generic `drawable` component, that is attached to any entity that is drawable.  
@@ -45,9 +45,22 @@ ent.drawable = true
 ```
 
 ---
+This probably smells very similar to OOP- which makes sense, because it is. Essentially, this is the exact same as an interface in OOP, but in reverse:  
+With an OOP interface, the interface *FORCES* methods/fields to be implemented.  
+With component-projection, the methods/fields *FORCE* the interface to exist.  
+It's the same thing, but in reverse.
 
-Whats AWESOME about this, is that we can now query entities without knowing about their particular implementation.  
-(This probably smells very similar to OOP; yes.. it is.)  
+(This is a bit off-topic, but in UMG, we can also use `groups` as component-projection mediums; which allows us to project in more complex ways.)  
+That is, we can say stuff like:
+- "If ent has `eyes` component AND `ears` component ->"
+    - "give entity `sensory` component"
+
+<br/>
+
+---
+
+Anyway, whats AWESOME about all this, is that we can now query entities without knowing about their particular implementation.  
+
 For example:
 ```lua
 -- Draw System (pseudocode)
@@ -91,10 +104,12 @@ Is that not beautiful?
 
 ## Taking it a step further- Values-projection:
 We can take it a step further, by providing *values* for the projected component.  
-Example:
+Example:  
+Here, we see `nametag --> text` projection.  
 ```lua
 components.project("nametag", "text", function(ent)
     local nametag = ent.nametag
+    -- this returned table will be the VALUE
     return {
         scale = SCALE,
         default = DEFAULT,
@@ -105,8 +120,23 @@ components.project("nametag", "text", function(ent)
     }
 end)
 ```
-Here is a code snippet yoinked straight from the ecosystem.  
+Here is a code snippet yoinked straight from the umg ecosystem.  
+What's special, is that the projection is giving an actual *value* to the target component.  
 In this example, the `nametag` component "passes" a bunch of default values to the `text` component; most notably, it tells the text component to take the value of the `controller` component; (which, notably, will be the username of the player.)
 
+<br/>
 
+# Pitfalls:
+**INCONSISTENCY:** If multiple components project to the same component, and they both try to provide a value, only one will succeed.
+
+**MEMORY EFFICIENCY:** For rcomp projection, its a bit inefficient, since we need to keep track of who is currently projecting to what component in the event of removal. This involves storing an entity in a SSet per projection.
+
+**COUPLING:** Creates coupling between 2 components.
+
+
+<br/>
+<br/>
+
+
+Thankz for readin!
 

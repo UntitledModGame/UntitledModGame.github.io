@@ -43,6 +43,7 @@ Here are some other direct examples from games:
 - Chess: `control = multi-entity`
 - The powder toy: `control = world-interactive`
 - Stellaris: `control = multi-entity / world-interactive`
+- Minecraft: `control = single-entity / world-interactive`
 
 Cool!<br/>
 Now you understand how I'm trying to categorize stuff here.<br/>
@@ -88,7 +89,7 @@ Hopefully all of these make sense.
 Note that many games can have multiple progression-types baked in.
 For example- Bloons-TD-6 has Ephemeral progression in levels, (since you restart at the end of a run), but ALSO has One-way progression, since you can buy permanent upgrades for your towers.
 
-Note that in Bloons-TD-6, you can obtain all of the best possible towers in the entire game in less than an hour.<br/>
+Note that in Bloons-TD-6, you can obtain most of the towers in a SINGLE run; a run lasting less than an hour.<br/>
 This is due to it's Ephemeral nature; the towers are reset at the end of the run, so the game can afford to give you many upgrades in a short amount of time, since they will be reset.<br/>
 As listed, this is the main upside of Ephemeral progression.
 
@@ -169,7 +170,7 @@ This is because with emergence, (and with abstract-progression) we lose control 
 To tell a compelling story, we need a lot of control.<br/>
 Unfortunetely... we forfeit a lot of our control as soon as we attempt to add emergent systems.
 
-This is why I advocate for (most) indie developers to forfeit story-based content, and instead focus on creating good systems.
+This is why I, personally, would advocate to forfiet story-based content, and instead focus on creating good systems.
 
 ----
 

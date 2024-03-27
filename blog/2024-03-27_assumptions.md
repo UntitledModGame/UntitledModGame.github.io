@@ -67,7 +67,7 @@ Uh oh... suddenly, we need *2 different renderers;* one for the hotbar, and one 
 
 ----
 
-Ok, so it's probably quite obvious by now that "highly assumptionless code" is a related concept to having [low coupling.](https://en.wikipedia.org/wiki/Coupling_(computer_programming))  
+Ok, so it may be obvious by now that "highly assumptionless code" is a related concept to having [low coupling.](https://en.wikipedia.org/wiki/Coupling_(computer_programming))  
 Whilst I would agree with this, I think coupling is more often used when talking about the internals of a system; or a system as a whole. When writing an internal system, a lot of the time, you don't need to make assumptions about the future; because everything should be contained inside of said system.
 
 Assumptions, then, are mostly needed when we are creating an external API, and we are predicting *how* the API is to be used.  
@@ -87,9 +87,9 @@ Another API that is highly assumptionless is [Raylib.](https://www.raylib.com/ex
 <br/>
 
 
-# Avoiding this in the future:
+# Avoiding bad assumptions in the future:
 Obviously, I want to avoid this shit like the plague.  
-As such, I have created a lil checklist/procedure for myself to use.
+As such, I have created a lil checklist/procedure for myself to use.   
 Here it is:
 
 ## Checklist for systems:

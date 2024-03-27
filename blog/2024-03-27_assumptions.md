@@ -103,21 +103,10 @@ Here it is:
     - If there are many scenarios; good. Keep it.
     - If the list is lacking, consider killing the component, or making it more generic.
 
-<br/>
 
-----
 
 <br/>
-
-----
-
 <br/>
 
-# Comp-projection coupling - something to be wary of:
-When I first came up with idea for component-projection in UMG; I thought I was the MAN. Admittedly, it is a pretty fucking cool idea.
-
-But, it's not perfect. Component-projection produces *coupling* between components; which isn't ideal.  
-It's still a great concept. We just need to be very wary and careful not to abuse it; because coupling truly can be an invisible, insidious beast.
-
-
+Thanks for reading; ok, lets hope I remember to try use this thing lol.
 

@@ -58,11 +58,26 @@ A few years ago, I assumed that all inventories would be able to be rendered int
 No!!! This is terrible! We have created an assumption about *how* the inventory should be rendered.   
 What happens if we want a minecraft-like inventory setup, with a hotbar at the bottom?  Uh oh... suddenly, we need *2 different renderers;* one for the hotbar, and one for the inventory. Not possible under our current setup.
 
-Ok, so it's probably quite obvious by now that high "assumptionless code" is a related concept to having [low coupling.](https://en.wikipedia.org/wiki/Coupling_(computer_programming))  
-Whilst I would agree with this, I think coupling is more often used when talking about the internals of a system. When writing an internal system, most of the time, you don't really need to make assumptions about the future.  
+----
 
-But [UMG truly is a different beast](../umgtech), for this exact reason. With every base-mod that I write, I am *FORCED* to create assumptions about the future of the platform.  
-Which sucks, because my previous code has largely sucked at making good assumptions!!
+<br/>
+
+----
+
+Ok, so it's probably quite obvious by now that "highly assumptionless code" is a related concept to having [low coupling.](https://en.wikipedia.org/wiki/Coupling_(computer_programming))  
+Whilst I would agree with this, I think coupling is more often used when talking about the internals of a system; or a system as a whole. When writing an internal system, a lot of the time, you don't need to make assumptions about the future; because everything should be contained inside of said system.
+
+Assumptions, then, are mostly needed when we are creating an external API, and we are predicting *how* the API is to be used.  
+[UMG is truly a different beast](../umgtech), for this exact reason. With every base-mod that I write, I am *FORCED* to create assumptions about the future of the platform.  
+Which sucks, because my previous code has largely sucked at making good assumptions!!  
+(I will note, however; that the core UMG-API has been excellent at making no assumptions; so at least I have that haha.)
+
+I also want to point out, a piece of software that I think has a very "lovely" assumptionless structure, is [LOVE](https://love2d.org) itself.  With LOVE, the framework doesn't care at all how you structure your game.   
+There's no such thing as a gameObject. 
+It doesn't care where you put logic.  
+It doesn't care how you load your files, either.  
+Isn't that beautiful?  
+Another API that is highly assumptionless is [Raylib.](https://www.raylib.com/examples.html)
 
 <br/>
 <br/>
@@ -88,12 +103,17 @@ Here it is:
     - If there are many scenarios; good. Keep it.
     - If the list is lacking, consider killing the component, or making it more generic.
 
-
-
-<br/>
 <br/>
 
-# Comp-projection coupling - something to be aware of:
+----
+
+<br/>
+
+----
+
+<br/>
+
+# Comp-projection coupling - something to be wary of:
 When I first came up with idea for component-projection in UMG; I thought I was the MAN. Admittedly, it is a pretty fucking cool idea.
 
 But, it's not perfect. Component-projection produces *coupling* between components; which isn't ideal.  

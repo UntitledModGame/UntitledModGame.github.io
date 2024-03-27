@@ -50,13 +50,16 @@ I have some examples up my sleeve from UMG:
 Perhaps the most relevant example as of (27/03/2024) is ui.  
 With the UI mod, I (stupidly) made an assumption that all root-UI-elements should be rendered in the main-scene.   
 This... was really stupid. Because I've now come across a situation where we need to render UI elements directly in the world, rather than in the upper-level main-scene.  
-To fix this, we need to remove the assumption that all root-elements exist in the main-scene; and instead, all the programmer to choose where the elements are put.  
+To fix this, we need to remove the assumption that all root-elements exist in the main-scene; and instead, give the programmer the right to choose where the elements are put.  
 (I know; this seems obvious in hindsight!)
 
 Another example is the inventory system.  
-A few years ago, I assumed that all inventories would be able to be rendered into the world. Think like, a chest. Or an anvil. Or a player inventory. All of these can be rendered... no problem, right?
-No!!! This is terrible! We have created an assumption about *how* the inventory should be rendered.   
-What happens if we want a minecraft-like inventory setup, with a hotbar at the bottom?  Uh oh... suddenly, we need *2 different renderers;* one for the hotbar, and one for the inventory. Not possible under our current setup.
+A few years ago, I assumed that all inventories would be rendered into the world.   
+Think like, a chest. Or an anvil. Or a player inventory.   
+All of these can be rendered... no problem, right?  
+No!!! This is terrible!   
+We have created an assumption about *how* the inventory should be rendered. What happens if we want a minecraft-like inventory setup, with a hotbar at the bottom?   
+Uh oh... suddenly, we need *2 different renderers;* one for the hotbar, and one for the inventory. Not possible under our current setup.
 
 ----
 

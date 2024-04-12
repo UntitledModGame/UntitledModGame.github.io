@@ -1,0 +1,160 @@
+---
+slug: search_for_tool
+title: Searching for a better tool
+tags: [design, coding]
+---
+
+
+I had a *very* interesting conversation with Max Cahill about his ideas surrounding decoupling,
+in Love2d discord.
+
+---
+
+His opinion was that components should be "aggressively decoupled." 
+
+His ideas was that each component should store it's own position. 
+EG:
+- `sprite` component has a `vec2` render-position
+- `physics` component has a `vec2` world-position
+
+The idea then, was that an external component would come along, and "glue" them together, to sync their positions.
+
+---
+
+Now admittedly, I dislike this; for two reasons:
+- It makes stuff more complicated
+- There's no longer a single-source of truth for position
+
+But it's still interesting to see the perspective.
+
+---
+
+## Philosophy synced up:
+```
+Always prefer decoupling, if possible.
+Glue-code is ALWAYS better than overly-coupled systems.
+
+Consider:
+- Overly-coupled system; hard to extend, manage, very restrictive.
+- Forgetting to add a bit of glue-code. OOPSIE! (No problem)
+
+Obviously, glue-code is generally better to have, even if its a bit ugly.
+```
+
+### Downside of decoupling of components:
+One BIG downside with glue-code, (and aggressive-decoupling for that matter,) is that it often generates multiple sources of truth.
+
+---
+
+
+# Example of good-decoupling in UMG:
+The `items` mod, with the `effects` mod.
+Take the high-level concept: 
+- "When player equips helmet, helmet gives +2 armor."
+
+And the `helmet` entity is represented as an item:
+```lua
+defineItem({
+	propertyEffect = {
+		armor = 2
+	},
+	name = "Steel Helmet",
+	...
+})
+```
+
+Internally, entities have a list of effects: `ent.effects = Effects(...)`
+And entities can also have an inventory: `ent.inventory = Inventory(...)`
+
+We would implement this in UMG like so:
+```lua
+
+--[[
+    Integration with items mod:
+
+	:onItemAdded is called when itemEnt is added to this slot.
+	:onItemRemoved is called when itemEnt is removed from this slot.
+	:canAddItem checks whether we can add the item.
+]]
+local HelmetSlot = objects.Class("...")
+    :implement(items.SlotHandle)
+
+function HelmetSlot:onItemAdded(itemEnt)
+    local ent = self:getOwner()
+    if ent.effects then
+        ent.effects:add(ent, itemEnt)
+    end
+end
+
+function HelmetSlot:onItemRemoved(itemEnt)
+    local ent = self:getOwner()
+    if ent.effects then
+        ent.effects:remove(itemEnt)
+    end
+end
+
+function HelmetSlot:canAddItem(itemEnt)
+    return isHelmet(itemEnt)
+end
+
+```
+Then, with the inventory;
+```lua
+
+local PlayerInventory = objects.Class("...")
+    :implement(items.Inventory)
+
+function PlayerInventory:init()
+	self:setSlotHandle(1, HelmetSlot())
+end
+```
+
+Awesome!!! This is really beautiful decoupling.   
+But... there is one glaring issue.   
+*multiple sources of truth.*
+
+Quite frankly, this is kinda the "price" we pay for aggressive decoupling like this.
+
+Tradeoff is worth, imo.
+
+
+
+
+
+
+
+# More thoughts:
+
+
+Write more on this later, because I'm tired right now.
+
+---
+
+We have *CONSISTENTLY* created WAY TOO MANY bloaty components for UMG.
+
+Shit like `basicUIComponent` is like, *meh*, and other components are kinda bad too.
+
+We should have a big fat look through all components, and try to prune a bunch of them.
+
+## Let the playable-mods define the components.
+# NOT the base-mods!!! Base mods should be assumptionless, and pure.
+
+It's okay if quick and dirty/hacky components are in playable mods.
+But it is NOT OKAY if dirty/hacky components are in BASE mods. Unacceptable.
+
+---
+
+On a related note, we should try to *minimize* our usage of component-projection.
+
+comp-projection shares the exact same issues that inheritance has; in that it creates, deep, wide, invisible hierarchies that are kindof hard to understand.
+
+---
+
+## Final thoughts:
+We should attempt to have systems like `typecheck`; a mod that defines NO components. 
+Or, a mod like `generation`; which also defines NO components; yet is extremely powerful and useful.
+
+I have come to the realization that we should try to define as LITTLE components as possible; and rather, we should focus on creating small components, yet *powerful* systems to go alongside them.
+
+
+

@@ -127,7 +127,7 @@ In this example, the `nametag` component "passes" a bunch of default values to t
 <br/>
 
 # Pitfalls:
-**INCONSISTENCY:** If multiple components project to the same component, and they both try to provide a value, only one will succeed.
+**INCONSISTENCY:** If multiple components project to the same component, and they both try to provide a value, only one will succeed. (This is kinda similar to the [diamond-problem in OOP.](https://en.wikipedia.org/wiki/Multiple_inheritance#The_diamond_problem))
 
 **MEMORY EFFICIENCY:** For rcomp projection, its a bit inefficient, since we need to keep track of who is currently projecting to what component in the event of removal. This involves storing an entity in a SSet per projection.
 

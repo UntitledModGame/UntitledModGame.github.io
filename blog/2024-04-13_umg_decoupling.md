@@ -20,7 +20,7 @@ EG:
 - `sprite` component should OWN a render-position vector
 - `physics` component should OWN a world-position vector
 
-The idea then, was that an external component would come along, and "glue" them together, to 
+The idea then, was that an external component would come along, and "glue" them together, to make positioning consistent.
 
 The reason this is nice, is because if we want to do some fudging-around with the sprite's rendering position, (eg, make images bob up and down,) then that is easily doable; since the sprite component's position is not coupled to anything.  
 This was a really interesting perspective to hear, and I think it opened my mind a lot.

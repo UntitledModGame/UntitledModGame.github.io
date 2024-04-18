@@ -9,7 +9,7 @@ Terminology for UMG.
 <!--truncate-->
 
 ## OKAY:
-Make sure to update this file!!!
+Make sure to update this file as UMG progresses!!!  
 
 <br/>
 <br/>

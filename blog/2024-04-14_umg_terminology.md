@@ -31,10 +31,10 @@ Make sure to update this file as UMG progresses!!!
 | ----------- | ----------- |
 | qbus   | Question bus |
 | evbus   | Event bus |
+| DELS   | [Delayed-Structuring](../DELS)        |
 | rcomp   | Regular component        |
 | shcomp  | Shared component        |
 | ent   | Entity        |
 | etype   | Entity-Type        |
 | projection   | Component-projection        |
-| DELS   | [Delayed-Structuring](../DELS)        |
 

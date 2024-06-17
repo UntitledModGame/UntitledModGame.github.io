@@ -54,6 +54,14 @@ If we didn't delete `otherEnt`, then we would have two copies of it in the ECS.
 
 ---
 
-This is the prime reason behind why propagation is a thing in UMG.
+## Nested propagation
 
-
+Propagation is applied through entities, as well as through data structures.
+For example:
+```lua
+ent.abc = {
+    hi = {ent_1, ent_2}
+    -- These are propagated.
+    -- (So is anything that these entities reference)
+}
+```

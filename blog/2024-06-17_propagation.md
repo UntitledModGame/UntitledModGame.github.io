@@ -1,5 +1,5 @@
 ---
-slug: entity_propagation
+slug: ent_propagation
 title: Entity propagation
 tags: [design, umg]
 ---

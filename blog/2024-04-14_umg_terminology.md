@@ -37,8 +37,8 @@ Make sure to update this file as UMG progresses!!!
 | etype   | Entity-Type        |
 | projection   | Component-projection        |
 | DELS   | [Delayed-Structuring](../DELS)        |
-| propagator   | An ent that [references another entity](../component_propagation)   |
-| propagatee   | An ent that [is referenced by another entity](../component_propagation)   |
+| propagator   | An ent that [references another entity](../ent_propagation)   |
+| propagatee   | An ent that [is referenced by another entity](../ent_propagation)   |
 
 
 

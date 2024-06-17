@@ -37,4 +37,5 @@ Make sure to update this file as UMG progresses!!!
 | ent   | Entity        |
 | etype   | Entity-Type        |
 | projection   | Component-projection        |
+| collapse | When an entity references another entity, and causes a delete/clone operation to be propagated to the child |
 

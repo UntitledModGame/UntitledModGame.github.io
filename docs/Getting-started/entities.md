@@ -1,7 +1,7 @@
 
 
 # Entities
-
+delete themselves randomly
 An entity is just a glorified lua table, pretty much.<br/>
 They contain "components", which are just key-values in the table.
 

@@ -1,6 +1,6 @@
 ---
 slug: entity_propagation
-title: Entity propagation; Why entities sometimes get deleted randomly
+title: Entity propagation
 tags: [design, umg]
 ---
 
@@ -22,12 +22,10 @@ ent:delete()
 -- otherEnt is deleted too!
 ```
 
-This concept is known as "propagation".
+This concept is known as "propagation".  
+But... why are the clone and delete operations propagated?  
 
-This may make sense to you...
-Or maybe you are horrified!
-
-Why are the clone and delete operations propagated?  
+---
 
 Consider the following scenario:
 ```lua
@@ -39,8 +37,6 @@ ent:delete()
 local ent = load(data)
 ```
 This operation could happen when we are saving a world.
-
----
 
 The big question is: what should happen to `otherEnt`?  
 It obviously needs to be saved alongside `ent`... Or else `ent` will lose component data.   

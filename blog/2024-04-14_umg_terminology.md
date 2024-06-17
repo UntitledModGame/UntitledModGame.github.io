@@ -31,11 +31,17 @@ Make sure to update this file as UMG progresses!!!
 | ----------- | ----------- |
 | qbus   | Question bus |
 | evbus   | Event bus |
-| DELS   | [Delayed-Structuring](../DELS)        |
 | rcomp   | Regular component        |
 | shcomp  | Shared component        |
 | ent   | Entity        |
 | etype   | Entity-Type        |
 | projection   | Component-projection        |
-| collapse | When an entity references another entity, and causes a delete/clone operation to be propagated to the child |
+| DELS   | [Delayed-Structuring](../DELS)        |
+| propagator   | An ent that [references another entity](../component_propagation)   |
+| propagatee   | An ent that [is referenced by another entity](../component_propagation)   |
+
+
+
+
+
 

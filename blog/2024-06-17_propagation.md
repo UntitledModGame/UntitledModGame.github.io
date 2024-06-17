@@ -50,7 +50,8 @@ When `ent` is saved, a copy of `otherEnt` is serialized and saved to `data`. Thi
 Therefore when the data is loaded, a copy of `otherEnt` is also loaded.
 
 Aha! And that's the big problem.   
-If we didn't delete `otherEnt`, then we would have two copies of it in the ECS.  
+If we didn't delete `otherEnt`, then we would have two copies of it in the ECS.   
+In order to have entities within components, we need propagation.
 
 ---
 

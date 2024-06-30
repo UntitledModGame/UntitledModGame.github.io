@@ -120,7 +120,7 @@ const config = {
             ],
           },
         ],
-        copyright: `This site was made using Docusaurus! :)`,
+        copyright: `Copyright © 2022-2024 CodeTheory Limited`,
       },
       prism: {
         theme: lightCodeTheme,

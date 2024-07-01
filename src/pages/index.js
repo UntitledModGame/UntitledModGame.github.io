@@ -21,7 +21,7 @@ function HomepageHeader() {
         </div>
 
         <div>
-          <a href="https://steampowered.com">
+          <a href="https://discordapp.com/invite/n6N24cUMDA">
             <img src="img/join_discord.png"></img>
           </a>
         </div>

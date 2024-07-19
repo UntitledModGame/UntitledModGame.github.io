@@ -57,6 +57,33 @@ You get the idea! :)
 ------------------
 <br/>
 
+
+# Client/server only shared components:
+Sometimes, we will have an object that can only be created on client/server. (For example, a text object)  
+The issue is that text objects don't exist on the server.  and we may want this object as a shared component in an ent-type definition.  
+How do we fix this?    
+
+We can avoid this with the following idiom:
+```lua
+umg.defineEntityType("mod:myEnt", {
+    text = client and Text()
+    --[[
+    Due to short circuiting, Text() is only evaluated on the client here.
+    if we justpdid:
+
+    text = Text()
+
+    Then we would get an error, because Text is not available on the server.
+    ]]
+})
+```
+
+-----
+<br/>
+
+
+
+
 # Classes:
 Lua doesn't have classes, neither does the UMG engine.<br/>
 However, the `objects` base mod provides classes:
@@ -202,7 +229,6 @@ Examples of this: `mortality:entityDeath`, `rendering:drawEntity`
 ------
 <br/>
 
-
 # Component-projection  +  Flag components:
 In UMG, "component projection" is a concept when one component causes
 another component to exist, or "creates" another component.
@@ -235,7 +261,6 @@ umg.on("control:entityClicked", function(ent)
 end)
 ```
 The same thing is used for `drawable` and `usable`.
-
 
 
 -----

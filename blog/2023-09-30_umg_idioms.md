@@ -24,17 +24,6 @@ This is (roughly) the same as `ent:hasComponent("foo")`.<br/>
 ------------------
 <br/>
 
-# Base-mod files:
-These files aren't compulsory, but it is common practice to put them in base mods:
-
-`mod/components.md` - defines the components for this mod, in markdown<br/>
-`mod/mod_questions.lua` - where `umg.defineQuestion` is used<br/>
-`mod/mod_events.lua` - where `umg.defineEvent` is used<br/>
-
-
-------------------
-<br/>
-
 # Runtime client/server checks:
 Often, we will have code that is running on BOTH client-side AND server-side.<br/>
 (For example, the `onDeath` callback)

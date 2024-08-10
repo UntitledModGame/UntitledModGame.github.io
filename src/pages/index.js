@@ -10,24 +10,22 @@ function HomepageHeader() {
   return (
     <header class="homepage" className={clsx('hero hero--primary', styles.heroBanner)}>
       <div className="container">
-        <img src="img/title_txt_wide.png" class=".title-img"></img>
+        <img src="img/umg_transparent.png" className=".title-img"></img>
+        <br/>
+        <h1>Users create. Users play.</h1>
         <br/>
         <br/>
 
         <div>
-          <a href="https://steampowered.com">
+          <a href="https://steampowered.com" style={{padding:"1%"}}>
             <img src="img/play_free_steam.png"></img>
           </a>
-        </div>
-
-        <div>
-          <a href="https://discordapp.com/invite/n6N24cUMDA">
+          <a href="https://discordapp.com/invite/n6N24cUMDA" style={{padding:"1%"}}>
             <img src="img/join_discord.png"></img>
           </a>
         </div>
 
         <br/>
-        <img src="img/umg_hand_logo.png"></img>
       </div>
     </header>
   );

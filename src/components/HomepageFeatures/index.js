@@ -20,7 +20,7 @@ const FeatureList = [
     description: (
       <>
         A central goal of UMG is compatibility between mods.
-        Within the engine, there exist measures and tools that force cohesion; meaning that mods will always work with others.
+        This degree of compatibility is enforced by the engine, ensuring excellent cohesion between mods.
       </>
     ),
   },

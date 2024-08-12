@@ -19,9 +19,8 @@ const FeatureList = [
     Img: require('@site/static/img/cooperative.png').default,
     description: (
       <>
-        UMG is designed for compatibility
-        which is encouraged at an API level.
-        Mods are intended to build on top of each other.
+        A central goal of UMG is compatibility between mods.
+        Within the engine, there exist measures and tools that force cohesion; meaning that mods will always work with others.
       </>
     ),
   },

@@ -4,14 +4,15 @@ title: The Zen of UMG
 tags: [design, umg]
 ---
 
-Some quick guidelines that summarizes the current UMG design philosophy.<br/>
+Some quick guidelines that summarize the current UMG design philosophy.<br/>
 
 <!--truncate-->
 
 <br/>
 
-# NOTE: all of this is subject to change!
-## If you disagree with something, or have a counterexample, let me know.
+# NOTE: all of this is subject to nuance!
+## If you disagree with something, or have a counterexample, let me know. I would love to discuss it.
+This file basically seeks to clarify UMG's current ideology.
 
 <br/>
 <br/>
@@ -22,7 +23,7 @@ Some quick guidelines that summarizes the current UMG design philosophy.<br/>
 
 - Less code > more code
 
-- Elegance > efficiency (Unless it's really bad)
+- Readibility and Elegance > efficiency (Unless it's really bad)
 
 - Simple and assumptionless > Complex and flexible
 
@@ -57,7 +58,8 @@ Some quick guidelines that summarizes the current UMG design philosophy.<br/>
 - The purpose of base-mods is to provide cohesion/connections within the ecosystem; 
     - NOT JUST to reuse code!
 
-- Mods shouldn't break other mods just by coexisting.
+- If mod-A and mod-B know nothing about each another, they should be able to exist cohesively; 
+    - (UNLESS they are both playable-mods.)
 
 - Its OK for playable/addon mods to be hacky/poorly designed. 
 
@@ -125,4 +127,4 @@ ent.playerControl = {
 <br/>
 
 # And lastly, but not least:
-- Everything has nuance; don't take any of these guidelines as absolute truth!
+- All of these guidelines have nuance; don't take any as absolute truth!

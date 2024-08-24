@@ -21,7 +21,7 @@ This file basically seeks to clarify UMG's current ideology.
 
 - Follow the 80/20 rule
 
-- Less code > more code
+- Less code > more code, if possible
 
 - Readibility and Elegance > efficiency (Unless it's really bad)
 

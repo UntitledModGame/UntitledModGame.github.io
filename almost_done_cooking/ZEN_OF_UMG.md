@@ -10,14 +10,25 @@ Some quick guidelines that summarize the current UMG design philosophy.<br/>
 
 <br/>
 
-# NOTE: all of this is subject to nuance!
-## If you disagree with something, or have a counterexample, let me know. I would love to discuss it.
+# Table of contents:
+- [High-level philosophy](#umg-high-level-philosophy)
+- [Systems + emergence](#systems-and-emergence)
+- [Mod cohesion](#mod-cohesion)
+- [Component design](#component-design)
+
+---
+
+<br/>
+
+## NOTE: all of this is subject to nuance!
+If you disagree with something, or have a counterexample, let me know. I would love to discuss it.  
 This file basically seeks to clarify UMG's current ideology.
 
 <br/>
 <br/>
+<br/>
 
-## UMG High-Level Philosophy:
+# UMG High-Level Philosophy:
 
 - Follow the 80/20 rule
 
@@ -35,12 +46,16 @@ This file basically seeks to clarify UMG's current ideology.
 
 - Regular data and functions > Objects and classes
 
+[Back to index](#table-of-contents)
 
 ---
 
-## Systems and Emergence:
-<details><summary>show</summary>
+<br/>
+<br/>
+<br/>
 
+
+# Systems and Emergence:
 - DO embrace chaotic, interacting systems
 
 - DONT fight existing systems to achieve something. Instead:
@@ -49,12 +64,16 @@ This file basically seeks to clarify UMG's current ideology.
 
 - If something is unnatural to implement, try avoid implementing it
 
-</details>
+
+[Back to index](#table-of-contents)
 
 ---
-## Mod Cohesion:
-<details><summary>show</summary>
 
+<br/>
+<br/>
+<br/>
+
+# Mod Cohesion:
 - The purpose of base-mods is to provide cohesion/connections within the ecosystem; 
     - NOT JUST to reuse code!
 
@@ -65,16 +84,16 @@ This file basically seeks to clarify UMG's current ideology.
 
 - Its NOT OKAY for base mods to be hacky/poorly designed. 
 
-</details>
 
+[Back to index](#table-of-contents)
 
-
+<br/>
+<br/>
+<br/>
 
 ---
 
-## Component design:
-<details><summary>show</summary>
-
+# Component design:
 ## What types should components be? 
 Components (usually) shouldn't contain functions.  
 They should mostly be plain data.  
@@ -117,14 +136,8 @@ ent.playerControl = {
 }
 ```
 
-</details>
-
-
----
+[Back to index](#table-of-contents)
 
 <br/>
 <br/>
 <br/>
-
-# And lastly, but not least:
-- All of these guidelines have nuance; don't take any as absolute truth!

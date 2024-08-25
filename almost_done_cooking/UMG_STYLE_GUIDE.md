@@ -11,11 +11,10 @@ Try write code that is *as readable as possible*.
 <br/>
 <br/>
 
-# Comments and readable variables
+# Comments
 - Keep comments TERSE, not VERBOSE.
 - Conciseness > Proper grammar
 - Dont leave comments for simple code. 
-- (Variable/function names should explain simple code anyway)
 - Use `TODO`s / `FIXME`s when appropriate
 
 EXAMPLE FOR COMMENTS:
@@ -51,10 +50,19 @@ end
 
 --- ^^^^ MUCH BETTER.
 ```
+In general, be very aggressive when shortening comments.  
+EG:  
+- BAD: `"Looping over the itemPool array is inefficient"`
+- Much better: `"looping over itemPool is slow"`
 
-READABLE VARIABLES:  
-If possible, we want code to read like english would.   
-(Try to prefix boolean variables with `can` or `is` when appropriate.)  
+<br/>
+<br/>
+
+# Readable Variables:  
+To compensate for no comments, we want code to read like english would.   
+Ideally you should be able to read code similar to how you would read english.
+
+(Try to prefix boolean variables with `can` or `is` when appropriate.)   
 EXAMPLE:
 ```lua
 
@@ -71,6 +79,15 @@ function doStuff2(ent)
     if canOpen then
         -- ^^^ MUCH BETTER :)))
         -- (reads well: "if canOpen then")
+        ...
+    end
+end
+
+
+-- OR, EVEN BETTER:
+function doStuff3(ent)
+    if canOpen(ent) then
+        -- ^^^ WOW, SO READABLE :D much wow
         ...
     end
 end
@@ -147,10 +164,77 @@ end
 this helps us reason about the code better,
 because it is broken up implicitly into regions.
 
+(In general, code is never really something that you read top-to-bottom like a book; but rather, more similar to a bunch of nodes connected in a big graph.)
+
 Ideally, try to use 3 or 4 newlines between unrelated functions, and 1 newline between related functions.
+
+*WITHIN* a function, there should be a maximum of ONE newline between statements.  
+(It should follow the same rule as above; create space if the statements are unrelated)
 
 
 <br/>
+<br/>
+<br/>
+
+# Table returns:
+
+Our goal is to maximize readability.  
+As such, prefer passing/returning tables to aid readability.
+
+If you have many return values, consider combining them in a table.
+```lua
+
+function factory()
+    ...
+
+    -- BAD!!! Unreadable
+    return player, enemy, wall, ground, bg
+end
+
+
+function factory()
+    ...
+
+    --GOOD!! Readible
+    return {
+        player = player,
+        enemy = enemy,
+        wall = wall,
+        ground = ground,
+        bg = bg
+    }
+end
+```
+
+
+
+# Table arguments:
+And for defining functions:  
+If you have many arguments, consider combining them into an arguments table.
+```lua
+
+-- BAD!!! it's hard to tell what's happening
+dispatchCommand(cmd, b.foo, r, r2)
+
+-- GOOD. This is readable:
+dispatchCommand({
+    type = cmd,
+    argumentTable = b.foo,
+    viewArea = r,
+    spawnArea = r2
+})
+
+-- THIS IS GOOD TOO:
+dispatchCommand(cmd, {
+    argumentTable = b.foo,
+    viewArea = r,
+    spawnArea = r2
+})
+```
+IMPORTANT DISCLAIMER:  
+Using a table is very inefficient compared to arguments, since it incurs an allocation.  
+Only use a table if it won't impact performance much.
+
 
 # Variables and Filenames Notation
 Try avoid global variables as much as possible. if you really want/need to, use all uppercase
@@ -205,7 +289,7 @@ both module and class should be file-scoped and free of dependencies as much as 
   function MyClass:load()
       print(self.value)
   end
-
+ 
   return MyClass
 Functions/Methods
 local functions follow the format local function <name>() instead of local <name> = function()

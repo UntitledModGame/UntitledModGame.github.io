@@ -63,7 +63,7 @@ EG:
 <br/>
 
 # Readable Variables:  
-To compensate for no comments, we want code to read like english would.   
+To compensate for less comments, we want code to read like english would.   
 Ideally you should be able to read code similar to how you would read english.
 
 (Try to prefix boolean variables with `can` or `is` when appropriate.)   
@@ -115,12 +115,23 @@ function foo()
 end
 ```
 
+----
+
 <br/>
+<br/>
+<br/>
+
+
 
 # Indentation
 Use 4 spaces please.
 
+----
+
 <br/>
+<br/>
+<br/>
+
 
 # Line spacing
 In UMG, we use line-spacing to group together related bits of code, to make it more readable.  
@@ -175,46 +186,14 @@ Ideally, try to use 3 or 4 newlines between unrelated functions, and 1 newline b
 *WITHIN* a function, there should be a maximum of ONE newline between statements.  
 (It should follow the same rule as above; create space if the statements are unrelated)
 
+----
 
 <br/>
 <br/>
 <br/>
-
-# Table returns:
-
-Our goal is to maximize readability.  
-As such, prefer passing/returning tables to aid readability.
-
-If you have many return values, consider combining them in a table.
-```lua
-
-function factory()
-    ...
-
-    -- BAD!!! Unreadable
-    return player, enemy, wall, ground, bg
-end
-
-
-function factory()
-    ...
-
-    --GOOD!! Readible
-    return {
-        player = player,
-        enemy = enemy,
-        wall = wall,
-        ground = ground,
-        bg = bg
-    }
-end
-```
-
-
 
 # Table arguments:
-And for defining functions:  
-If you have many arguments, consider combining them into an arguments table.
+If you have many arguments, consider combining them into a table:
 ```lua
 
 -- BAD!!! it's hard to tell what's happening

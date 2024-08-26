@@ -4,6 +4,10 @@ title: UMG Style Guide
 tags: [umg]
 ---
 
+UMG Style guide.
+
+<!--truncate-->
+
 # THE GOLDEN RULE:
 Try write code that is *as readable as possible*.
 

@@ -34,18 +34,19 @@ end)
 ```
 ---
 
-# But wait! This setup is dumb!
+# But wait! Something about this is dumb!
+The `rendering:drawEntity` event is fine...   
+The issue is actually the `@draw` event. (For context, `@draw` is an event that is emitted globally once per frame.)  
 
-Why?  
+Why is tagging onto `@draw` bad?  
 Well, 2 reasons:
 
-### 1: The project (as a whole) becomes slightly harder to understand
-With systems like this, it becomes harder to get a grand-overview of the project.  
-(Such is the price of highly-aggressive decoupling.)
-
-### 2: Future systems cannot control as much.
+### Reason 1: Future systems cannot control as much.
 Lets imagine that we had a "lobby/menu" screen; where the player isn't actually in the game; but rather, exists within a menu.  
-With this, we ideally dont WANT to render the world-entities. But we are forced to, because the system is responding to the `@draw` event prematurely.
+With this, we ideally dont WANT to render the world-entities. But we are forced to, because the system is responding to the `@draw` event prematurely, and in a global-fashion.
+
+### Reason 2:
+The game as a whole is slightly harder to understand; since events are sprawled out globally.
 
 # A simple alternative:
 Just expose the function:

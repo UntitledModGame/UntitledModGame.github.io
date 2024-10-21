@@ -185,12 +185,17 @@ Maybe something to do with archetypes in the future?
 
 ---
 
-# Things that worked really well in UMG ecosystem:
+# Things that worked really well in UMG:
 
 ## GOOD MOD STUFF:
 - `sync.proxyEventToClient` this was amazing, simple, and super helpful
 - `sync.autoSyncComponent` for simple components, this was amazing
 - `typecheck` mod was DAMN AWESOME.
+- `onActivate` component (and in general, function shcomps) were great
+- wrapping `umg.defineEntityType` was super cool. (eg `defineFood`)
+- assumptionless mods (like `generation` mod) were great because they provided implicit DELS
+
+<br/>
 
 ## GOOD UMG-API STUFF:
 - evbuses, qbuses were epic (kinda)

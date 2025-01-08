@@ -36,9 +36,11 @@ Be open to new ideas! Execution is everything.
 
 
 ## Simplicity is paramount
-(Self explanatory, really.)
 
-Taking a complex problem and developing a simple, elegant solution for it is one of the hardest things in programming.  
+Simplicity is hard. Making something complex while having everything look simple is a monumental task.  
+It is very, very easy to just throw a bunch of code together and make a mess doing something.  
+Be disciplined! Do NOT give in to the temptation of easy complexity. 
+
 
 
 ---
@@ -56,10 +58,28 @@ The more generic or abstract something is, the harder it is to work with.
 
 The faster you can get "strong rules" down for your systems, the easier development will be.  
 
-Basically, we want to avoid making things overly generic.   
-We should instead cut deep and strong, and make HARD, SIMPLE assumptions about stuff. (Perfect example of this is minecraft, with its voxel-like setup)  
+Basically, we want to avoid making things overly generic;   
+Instead, we should make HARD, SIMPLE assumptions about stuff. (Perfect example of this is minecraft, with its voxel-like setup)  
 If the assumption is strong and fits our use case, the systems will end up being more powerful and simpler anyway.
 
+It's honestly OKAY if we don't hit all use-cases.
+
+
+---
+
+<br/>
+<br/>
+
+
+## Coupling vs Abstraction
+When writing code, try to be aware of all the coupling that you introduce.  
+Coupling is invisible when writing code, but very much visible when refactoring.
+
+[This video explains it nicely.](https://www.youtube.com/watch?v=rQlMtztiAoA&ab_channel=CodeAesthetic)
+
+If functions are the same, but have different reasons to change, they do not belong under the same abstraction.
+
+Copy-pasting code is not always bad!!
 
 ---
 
@@ -72,9 +92,7 @@ If the assumption is strong and fits our use case, the systems will end up being
 <br/>
 
 ## SSOTs are great (But beware of SSOT/coupling tradeoff)
-Not much needs to be said here honestly.
-
-If we have data as a SSOT, there is less opportunity for desyncs.  
+If we have data as a SSOT, there is less opportunity for bugs.  
 There are less moving parts, and the system is more robust.
 
 One downside:  

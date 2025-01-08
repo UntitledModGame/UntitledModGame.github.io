@@ -11,127 +11,22 @@ Bunch of lessons and yapping after 3 years of working on UMG-engine.
 
 # Throughout this post, I will list a bunch of the core "lessons" I have learned from 3 years of UMG, condensed into 1 file.
 
+---
+
+<br/>
+<br/>
 
 ## Pragmatism over Dogmatism.
-*Practicality/pragmatism is WAY MORE IMPORTANT than Ideology/Dogmatism.  
-**This ^^^ is the single most important lesson that I have ever learned, possibly in my entire coding career.** 
+Favor practicality/pragmatism over ideology/dogmatism.  
+**^^^ Possibly the most important programming lesson I have ever learned.** 
 
-> Dogmatism (noun)
-> the tendency to lay down principles as undeniably true, without consideration of evidence or the opinions of others.
+Sometimes, dogmatism can be useful, since our brain can ignore entire classes of ideas/solutions without analyzing them. (Ideas that don't align with our ideology.) This ignorance allows our brain to focus on more important stuff, which can be helpful.  
 
-^^^ Look!!! Isn't that ridiculous??  
-In engineering, there is nuance to EVERYTHING. We should never discount new ideas based on ideology. Such a stance will only make us blind.
+In engineering though, being completely blind is not a good thing.  
+It's easy to be dogmatic, less easy to be pragmatic.  
 
-Previously, with the invention of qbuses/evbuses, I held a very dogmatic stance on UMG's future. I believed that evbuses combined with the ECS setup would be the future of the platform, and to be fair; they kinda did a great job for lootplot.  
-However, that belief also blinded me to other alternative solutions, and caused me to overcomplicate a LOT of stuff; just for the sake of keeping the ecosystem "ideologically pure".
-
-Dogmatism is useful, since our brain is free to dive deeper into more complex concepts, since we can dismiss entire ideas without analyzing them. (Ideas that don't align with our ideology.)  
-I think this is why dogmatism was such a trap for me, was because it made problem-solving easier, and allowed me to delve deeper.
-
-In reality though, being blind is never a good thing.  
-It's very easy to be dogmatic, but it's less easy to be pragmatic.  
-
-**Instead of being dogmatic, be pragmatic.**   
-Be open to new ideas! Simplicity is king.
-
----
-
-<br/>
-<br/>
-
-
-## Lets talk about "flexibility."
-When I started, a core goal of UMG was "flexibility".  
-I changed my mind on this, and now, I think that a more practical goal is to have high cohesion between mods instead.  
-
-When writing code, you can never write code that accounts for everyone's use case. That's just not realistic.  
-I often found that, whilst trying to aim for great-flexibility, I would just end up making premature abstractions that ended up adding useless complexity to the system.  
-"Oh, but it's flexible! Oh wow, it's so generic!!!"  
-No. Shuddup!  
-We don't want complex abstractions. The more abstract something is, the harder it is to work with in a practical sense.
-
-A much better goal, is to prioritize making good assumptions about stuff instead.  
-**Be diligant, don't be scared to draw a hard line.**
-
-For example, in minecraft, a good assumption is that you can't place blocks that are midway between 2 positions.  
-"Oh no! But... but... now we can't make more complex structures!"  
-^^^ *That's fine.* That's now a limitation of the system.
-It sounds bad, but such a limitation allows other systems to be more powerful, efficient, well-defined, and robust.  
-AND most importantly; this assumption *it doesn't harm the integrity of the game; it becomes part of the game.*  
-
-In general, our goal should be to create hard, well-defined *assumptions* about systems, rather than trying to shoehorn in a one-size-fits-all approach that just ends up getting nowhere, and doing nothing useful.
-
----
-
-<br/>
-<br/>
-
-## Hard limitations are good
-
-At face value, limitations sound objectively bad.  
-But, like with many things, there is always nuance:
-
-If a system has more limitations, then we can reason about it more effectively.  
-Simple example: `foo variable is a number` 
-^^^ This is a big limitation. But this "limitation" gives us great value.  
-What value do we get? Lets see!
-```
-[foo is a number]
-- we can add,subtract,multiply,divide by foo
-- we can plug it into functions
-- we can set the value of it robustly
-- DOWNSIDE: we cant represent more exotic types in foo
-
-[foo is any type]
-- It's flexible
-- DOWNSIDE: We lose ALL of the above benefits
-```
-This is a kinda weird/contrived example, but it demonstrats the idea.  
-Limitations can be good, when chosen well!! It's all about *execution.*
-
-- Good limitation, is *very good*.
-- Bad limitation, is VERY, VERY BAD.
-
-**EXAMPLE: Revival vs NO Revival of entities:**
-```mermaid
-graph LR;
-    Entity_Unincorporated -- incorporate --> Entity
-    Entity --destroy--> Dead_Entity
-    Dead_Entity -- revive! --> Entity
-```
-```mermaid
-graph LR;
-    Entity_Unincorporated -- incorporate --> Entity
-    Entity --destroy--> Dead_Entity
-```
-
-At a glance, it may seem like these two setups are pretty much identical.  
-
-BUT **NO!!!** The second one has a hard limitation: "Dead entities will NEVER be revived."  
-This limitation gives us *so much more power.*  
-
-Systems that receive a dead-entity can be 100% sure that it will never exist again. So, they can dispose of it happily.  
-The server doesn't need to worry about syncing, and systems that have a hold on the entity-id can happily recycle the ent-id for other stuff.
-
-Limitations can often provide good value.  
-What's really important is choosing the *right* limitations, and not putting limits on stuff if there is no clear gain.
-
----
-
-<br/>
-<br/>
-
-
-## SSOTs are great (But beware of SSOT/coupling tradeoff)
-Not much needs to be said here honestly.
-
-If we have data as a SSOT, there is less opportunity for desyncs.  
-There are less moving parts, and the system is more robust.
-
-One downside though:  
-Having a SSOT *does* introduce coupling, (originating from the module that is responsible for providing the SSOT.)  
-
-So just be wary of this. Be pragmatic.
+**To sum it up: Instead of being dogmatic, be pragmatic.**   
+Be open to new ideas! Execution is everything.
 
 ---
 
@@ -141,13 +36,85 @@ So just be wary of this. Be pragmatic.
 
 
 ## Simplicity is paramount
-This goes without saying.  
-The less moving parts, the better.  
-Try to plan ahead. Try to make each part of the system do one SMALL thing.
+(Self explanatory, really.)
 
-"But what if we need a complex feature??"   
-That's fine; wrap simple-bits in more complex wrappers.  
-Reuse the complex wrappers whereever you want.
+Taking a complex problem and developing a simple, elegant solution for it is one of the hardest things in programming.  
+
+
+---
+
+<br/>
+<br/>
+
+
+
+## Avoid premature abstraction/generalization
+
+Don't overfocus on making your components and systems as generic as possible.  
+Instead, make them useful for the current problem.  
+The more generic or abstract something is, the harder it is to work with.  
+
+The faster you can get "strong rules" down for your systems, the easier development will be.  
+
+Basically, we want to avoid making things overly generic.   
+We should instead cut deep and strong, and make HARD, SIMPLE assumptions about stuff. (Perfect example of this is minecraft, with its voxel-like setup)  
+If the assumption is strong and fits our use case, the systems will end up being more powerful and simpler anyway.
+
+
+---
+
+<br/>
+<br/>
+
+---
+
+<br/>
+<br/>
+
+## SSOTs are great (But beware of SSOT/coupling tradeoff)
+Not much needs to be said here honestly.
+
+If we have data as a SSOT, there is less opportunity for desyncs.  
+There are less moving parts, and the system is more robust.
+
+One downside:  
+Having a SSOT *does* introduce coupling, since the parts must be connected.
+
+So just be wary of this. Be pragmatic.
+
+---
+
+<br/>
+<br/>
+
+
+## Robust/defensive code is good
+
+Being overly defensive is better than being overly aggressive.
+
+Example:
+```lua
+onItemUsed(function(playerEnt, itemEnt)
+    -- items always have a `mana` cost, 
+    -- since we are making a game with wizards!
+    playerEnt.mana -= itemEnt.manaCost
+end
+```
+^^^ BAD!! This is terrible!!!  
+What happens if we add an item that doesn't use mana? (EG a gun???)  
+Also, what happens if the player doesn't have mana???   
+(SPOILER: game crashes)
+
+```lua
+onItemUsed(function(playerEnt, itemEnt)
+    if itemEnt.manaCost and playerEnt.mana then
+        -- avoids crash by checking defensively
+        playerEnt.mana -= itemEnt.manaCost
+    end
+end
+```
+
+^^^ this code is much more robust, and much more defensive.
 
 ---
 
@@ -259,15 +226,113 @@ I was a bit unhappy with how events/questions were defined.
 I would like strong-type-lints in the next version, maybe.  
 Something like:
 ```lua
-local e = Event()
+local call, on = Event()
 
-e:call(1,2,3)
+call(1,2,3)
 
-e:on(function(x,y,z)
-    -- do stuff
+on(function(x,y,z)
+    print("explosion!")
 end)
 ```
-^^^ this would allow LuaLS to work.   
+^^^ this would allow LuaLS to work.  
+Not only that, but we could also do more useful stuff:
+```lua
+
+local call, on = Event()
+proxyEventToClient(call, on, "mod:event_id")
+
+```
 Do the same for questions.
 
+
+
+
+## Lets talk about "flexibility."
+When I started, a core goal of UMG was "flexibility".  
+I changed my mind on this, and now, I think that a more practical goal is to have high cohesion between mods instead.  
+
+When writing code, you can never write code that accounts for everyone's use case. That's just not realistic.  
+I often found that, whilst trying to aim for great-flexibility, I would just end up making premature abstractions that ended up adding useless complexity to the system.  
+"Oh, but it's flexible! Oh wow, it's so generic!!!"  
+No. Shut up!  
+We don't want complex abstractions. The more abstract something is, the harder it is to work with in a practical sense.
+
+A much better goal, is to prioritize making good, simple assumptions about stuff instead.  
+
+In general, our goal should be to create hard, well-defined *assumptions* about systems, rather than trying to shoehorn in a one-size-fits-all approach that just ends up getting nowhere, and doing nothing useful.
+
+The new goal for UMG is to create maximum *cohesion* between mods.  
+If modder-A and modder-B write mods, then both mods should ideally work with each other just fine.
+
+
+## Hard limitations are good
+
+At face value, limitations sound objectively bad.  
+But, like with many things, there is always nuance:
+
+If a system has more limitations, then we can reason about it more effectively.  
+Simple example: `foo variable is a number` 
+^^^ This is a big limitation. But this "limitation" gives us great value.  
+What value do we get? Lets see!
+```
+[foo is a number]
+- we can add,subtract,multiply,divide by foo
+- we can plug it into functions
+- we can set the value of it robustly
+- DOWNSIDE: we cant represent more exotic types in foo
+
+[foo is any type]
+- It's flexible
+- DOWNSIDE: We lose ALL of the above benefits
+```
+This is a kinda weird/contrived example, but it demonstrates the idea.  
+Limitations can be good, when chosen well!! It's all about *execution.*
+
+- Good limitation, is *very good*.
+- Bad limitation, is VERY, VERY BAD.
+
+**EXAMPLE: Revival vs NO Revival of entities:**
+```mermaid
+graph LR;
+    Entity_Unincorporated -- incorporate --> Entity
+    Entity --destroy--> Dead_Entity
+    Dead_Entity -- revive! --> Entity
+```
+```mermaid
+graph LR;
+    Entity_Unincorporated -- incorporate --> Entity
+    Entity --destroy--> Dead_Entity
+```
+
+At a glance, it may seem like these two setups are pretty much identical.  
+
+BUT **NO!!!** The second one has a hard limitation: "Dead entities will NEVER be revived."  
+This limitation gives us *so much more power.*  
+
+Systems that receive a dead-entity can be 100% sure that it will never exist again. So, they can dispose of it happily.  
+The server doesn't need to worry about syncing, and systems that have a hold on the entity-id can happily recycle the ent-id for other stuff.
+
+---
+
+Another example:  
+In minecraft, you can only have 1 block per (x,y,z) position.  
+(IE, you cannot have blocks that are placed inbetween other blocks)   
+This sounds bad, but it's not. It's actually very good!  
+If there are more limitations, then our code can reason about stuff better:
+- There don't need to be as many safety checks
+- Our systems can be more sure of things
+- We can make more powerful/strong assumptions
+
+And best of all, the one-block per (x,y,z) position fits really well with the game; in fact, it even defines *what the game is.*
+
+---
+
+**TO SUM IT UP:**  
+Limitations can often provide good value.  
+What's really important is choosing the *right* limitations, and not putting limits on stuff if there is no clear gain.
+
+---
+
+<br/>
+<br/>
 

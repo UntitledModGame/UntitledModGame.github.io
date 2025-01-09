@@ -20,9 +20,11 @@ Bunch of lessons and yapping after 3 years of working on UMG-engine.
 Favor practicality/pragmatism over ideology/dogmatism.  
 **^^^ Possibly the most important programming lesson I have ever learned.** 
 
+This sounds obvious, but it took far me too long to learn.
+
 Sometimes, dogmatism can be useful, since our brain can ignore entire classes of ideas/solutions without analyzing them. (Ideas that don't align with our ideology.) This ignorance allows our brain to focus on more important stuff, which can be helpful.  
 
-In engineering though, being completely blind is not a good thing.  
+In engineering though, being blind is not a good thing.  
 It's easy to be dogmatic, less easy to be pragmatic.  
 
 **To sum it up: Instead of being dogmatic, be pragmatic.**   
@@ -64,6 +66,9 @@ If the assumption is strong and fits our use case, the systems will end up being
 
 It's honestly OKAY if we don't hit all use-cases.
 
+Likewise, avoid blindly following DRY principle. (The [AHA principle states exactly this.](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself#AHA))
+
+
 
 ---
 
@@ -86,10 +91,89 @@ Copy-pasting code is not always bad!!
 <br/>
 <br/>
 
+## Little helper functions
+
+If you find yourself copy-pasting similar code a bunch, just make a little helper function to automate it.  
+
+Don't be tempted to make a big, overreaching abstraction at a higher level. Just make a cute lil helper instead.
+
+Also, don't be afraid to just copy-paste the helper function to the top of whatever file you are using it in!  
+(The perfect example here is item-definitions for lootplot; where little-helper functions are super useful)
+
+```
+If the helper-func's purpose is well-defined, and simple:  
+Maybe best to share it between files
+
+If the helper-func's purpose is ill-defined, or may change:  
+Maybe best to copy paste it to the top of the file?
+(Reduces coupling; avoids potential refactors)
+```
+
+Either way, dont be dogmatic, be pragmatic.
+
 ---
 
 <br/>
 <br/>
+
+
+## Big files
+
+Don't be afraid of big files (ie files that are over 1000 lines long.)  
+Never split up a big file just because "it's big".   
+It should only be split up if it makes logical sense.  
+
+(Perfect example of this is `lootplot/shared/exports.lua`; it's really nice having all of the exports in one place.)  
+(Another example is `s0.content/../foods.lua`, containing all the food-item definitions. It's nice to define all the foods in the same place)
+
+This applies especially to big files that are broad; not deep. (see below)
+
+---
+
+<br/>
+<br/>
+
+## Prefer breadth, not depth
+
+What's better?
+
+---
+
+### Depth:
+```mermaid
+stateDiagram
+    Code_A --> Code_B
+    Code_B --> Code_C
+```
+
+---
+
+### Or Breadth:
+```mermaid
+stateDiagram
+    Code_A
+    Code_B
+    Code_C
+    Code_D
+    Code_E
+```
+
+---
+
+I hold that that breadth is generally always better.  
+
+It's simpler.  
+Each part is easier to understand.  
+There is less coupling (ie: easier to refactor)  
+Also easier to test
+
+
+---
+
+<br/>
+<br/>
+
+
 
 ## SSOTs are great (But beware of SSOT/coupling tradeoff)
 If we have data as a SSOT, there is less opportunity for bugs.  

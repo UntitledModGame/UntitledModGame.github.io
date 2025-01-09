@@ -4,7 +4,7 @@ title: Lessons from 3 years of UMG
 tags: [design, coding]
 ---
 
-Bunch of lessons and yapping after 3 years of working on UMG-engine.
+Bunch of lessons that I learned after 3 years of working on UMG-engine.
 
 <!--truncate-->
 
@@ -184,7 +184,6 @@ I hold that that breadth is generally always better.
 It's simpler.  
 Each part is easier to understand.  
 There is less coupling (ie: easier to refactor)  
-Also easier to test
 
 
 ---

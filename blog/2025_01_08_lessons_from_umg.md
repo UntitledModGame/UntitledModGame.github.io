@@ -38,7 +38,8 @@ Be open to new ideas! Execution is everything.
 
 ## Simplicity is paramount
 
-Simplicity is hard. Making something complex while having everything look simple is a monumental task.  
+Simplicity is hard.  
+Solving something complex while having everything look simple is a monumental task.  
 It is very, very easy to just throw a bunch of code together and make a mess doing something.  
 Be disciplined! Do NOT give in to the temptation of easy complexity. 
 
@@ -65,7 +66,7 @@ If the assumption is strong and fits our use case, the systems will end up being
 
 It's honestly OKAY if we don't hit all use-cases.
 
-Likewise, avoid blindly following DRY principle. (The [AHA principle states exactly this.](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself#AHA))
+Likewise, avoid blindly following DRY principle. (See the [AHA principle](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself#AHA) as a counterexample)
 
 
 
@@ -184,6 +185,7 @@ I hold that that breadth is generally always better.
 It's simpler.  
 Each part is easier to understand.  
 There is less coupling (ie: easier to refactor)  
+It's also a lot easier to test!
 
 
 ---
